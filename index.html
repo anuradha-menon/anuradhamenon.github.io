@@ -1,355 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anuradha Menon | Portfolio</title>
-
-  <!-- ===== CSS Styles Inline ===== -->
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-      background: #fff;
-      color: #333;
-    }
-
-    /* ===== Header & Navbar ===== */
-    header {
-      background: #222;
-      color: #fff;
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #00b894;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #333;
-    }
-
-    /* ===== Hero/Home Section ===== */
-    .home {
-      text-align: center;
-      padding: 120px 20px;
-      background: linear-gradient(120deg, #74b9ff, #a29bfe);
-      color: #fff;
-    }
-
-    .home h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .typing {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #222;
-      background: #ffeaa7;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-
-    /* ===== About Section ===== */
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .about-image img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #444;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .about-text {
-      max-width: 600px;
-      text-align: left;
-      line-height: 1.6;
-      color: #555;
-      font-size: 1rem;
-    }
-
-    /* ===== Skills Section ===== */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .skill {
-      text-align: center;
-    }
-
-    .skill img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    /* ===== Projects Section ===== */
-    .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .project {
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 10px;
-    }
-
-    /* ===== Certificates Section ===== */
-    .certificates-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .certificate {
-      max-width: 250px;
-      text-align: center;
-    }
-
-    .certificate img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* ===== Contact Section ===== */
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .contact-icons img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s ease;
-    }
-
-    .contact-icons img:hover {
-      transform: scale(1.2);
-    }
-
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+    body { font-family:'Inter',Arial,sans-serif; background:linear-gradient(120deg,#f8fafc 75%,#e0f7fa 100%); color:#163447;}
+    .navbar { box-shadow:0 6px 24px rgba(0,0,0,.07);}
+    .section-title {color:#006769;font-size:2rem;font-weight:bold;margin-bottom:32px;}
+    .step-flow {background:#f3fafe;border-radius:16px;padding:32px 20px;margin-bottom:48px;}
+    .step-icon {background:#e0f7fa;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:auto;font-size:2rem;color:#009fae;}
+    .step-label {text-transform:uppercase;font-size:.95rem;font-weight:700;color:#016970;}
+    .projects-section, .articles-section {background:#fff;border-radius:1.5rem;box-shadow:0 4px 14px rgba(0,0,0,.03);}
+    .articles-section {padding-bottom:30px;}
+    .testimonials-section {background:linear-gradient(100deg,#f3faf2 75%,#e7e7f7 100%);border-radius:1.5rem;margin-top:50px;}
+    .testimonial-card {background:#fff;border-radius:12px;box-shadow:0 2px 13px rgba(0,0,0,.06);padding:30px 22px 22px 22px;}
+    .testimonial-author {display:flex;align-items:center;margin-top:17px;}
+    .testimonial-author img {width:56px;height:56px;border-radius:50%;margin-right:18px;}
+    .section-pad {padding:60px 0 50px 0;}
+    .card {border:none;box-shadow:0 4px 14px rgba(0,183,148,.025);}
+    .icon-link img {width:28px;margin:0 10px;transition:.2s transform;vertical-align:middle;}
+    .icon-link img:hover {transform:scale(1.14);}
+    .social-group {display:inline-block;}
+    .jumbotron {padding-top:85px;padding-bottom:55px;}
+    .articles-section .card-img-top {height:100px;object-fit:cover;}
+    .footer {background:#003838;color:#f0f0f0;margin-top:0;}
+    @media (max-width:767px){
+      .section-title{font-size:1.5rem;}
+      .step-label{font-size:.85rem;}
+      .projects-section,.articles-section,.testimonials-section{padding:18px 2px;}
+      .jumbotron{padding-top:100px;padding-bottom:25px;}
     }
   </style>
 </head>
 <body>
-  <!-- ===== Header/Navbar ===== -->
-  <header>
-    <h1>Anuradha Menon</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <!-- ===== Home Section ===== -->
-  <section id="home" class="home">
-    <h1>Hi, I'm Anuradha 👋</h1>
-    <p>I’m a <span class="typing"></span></p>
-  </section>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand font-weight-bold" href="#home">Anuradha Menon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#process">My Data Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- ===== About Section ===== -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-image">
-        <img src="images/about.png" alt="Anuradha Menon">
+<!-- Hero Section -->
+<section class="jumbotron text-center" style="background:linear-gradient(135deg,#f8fafc 60%,#e0f7fa 100%);margin-top:65px;">
+  <div class="container">
+    <img src="images/about.jpg" class="rounded-circle mb-3" width="160" height="160" alt="Anuradha Menon">
+    <h1 class="display-4 font-weight-bold">Anuradha Menon</h1>
+    <p class="lead mt-3">Data Analyst & ESG Researcher<br>Delivering actionable analytics for business and sustainability.</p>
+    <a href="docs/Data Science Portfolio with ChatGPT - Prompts.pdf" class="btn btn-primary mt-3" target="_blank">Download My Resume (PDF)</a>
+    <div class="my-3 social-group">
+      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub"><img src="icons/github.png" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium"><img src="icons/medium.png" alt="Medium"></a>
+      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork"><img src="icons/upwork.png" alt="Upwork"></a>
+    </div>
+  </div>
+</section>
+
+<!-- My Data Process: Visual Step Flow -->
+<section id="process" class="section-pad">
+  <div class="container step-flow shadow-sm">
+    <h2 class="section-title text-center mb-4">My Data Process</h2>
+    <div class="row text-center">
+      <div class="col-6 col-md-3 mb-4">
+        <div class="step-icon mb-2"><span>1</span></div>
+        <div class="step-label">Data Collection</div>
+        <div class="text-muted small">Sourcing reliable data from databases, APIs, and public datasets.</div>
       </div>
-      <div class="about-text">
-        <p>
-          Hi, I’m <strong>Anuradha Menon</strong>, a data analyst and ESG researcher passionate about
-          uncovering insights from data and helping organizations make informed, sustainable decisions.
-          I work with SQL, Python, Power BI, and Tableau, and I love data storytelling.
-        </p>
+      <div class="col-6 col-md-3 mb-4">
+        <div class="step-icon mb-2"><span>2</span></div>
+        <div class="step-label">Data Wrangling</div>
+        <div class="text-muted small">Cleaning, transforming, and validating for accuracy and usability.</div>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <div class="step-icon mb-2"><span>3</span></div>
+        <div class="step-label">Analysis & Modeling</div>
+        <div class="text-muted small">Exploratory analytics, model-building & root cause analysis.</div>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <div class="step-icon mb-2"><span>4</span></div>
+        <div class="step-label">Visualization & Storytelling</div>
+        <div class="text-muted small">Dashboards, business narratives, and user-friendly reports.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== Skills Section ===== -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <img src="images/skills/python.png" alt="Python">
-        <p>Python</p>
+<!-- Projects Section: Industry Diversity -->
+<section id="projects" class="section-pad projects-section">
+  <div class="container">
+    <h2 class="section-title text-center">Highlighted Projects</h2>
+    <div class="row">
+      <!-- ESG/Sustainability Project -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/projects/food waste management.png" class="card-img-top" alt="Food Waste Management Dashboard">
+          <div class="card-body">
+            <h5 class="card-title text-success">ESG / Sustainability</h5>
+            <h6 class="font-weight-bold">Food Waste Management Analytics</h6>
+            <p class="card-text small">Built a dashboard for tracking & reducing food waste. Executive reports driving measurable, sustainable impact for clients.</p>
+          </div>
+        </div>
       </div>
-      <div class="skill">
-        <img src="images/skills/sql.png" alt="SQL">
-        <p>SQL</p>
+      <!-- Transportation/Aviation Project -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/projects/flight data analysis.png" class="card-img-top" alt="Flight Data Analysis">
+          <div class="card-body">
+            <h5 class="card-title text-info">Transportation</h5>
+            <h6 class="font-weight-bold">Flight Data Analysis</h6>
+            <p class="card-text small">Analyzed international airline performance/delays with SQL & Python. Insights used in route optimization and reporting dashboards.</p>
+          </div>
+        </div>
       </div>
-      <div class="skill">
-        <img src="images/skills/data visualization.jpg" alt="Data Visualization">
-        <p>Data Visualization</p>
+      <!-- Retail/Demand Forecasting Project -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/projects/retail_sales.png" class="card-img-top" alt="Retail Sales Forecasting">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Retail</h5>
+            <h6 class="font-weight-bold">Retail Demand Forecasting</h6>
+            <p class="card-text small">Developed time-series models for sales forecasting. Helped chains optimize inventory and marketing campaigns.</p>
+          </div>
+        </div>
       </div>
-      <div class="skill">
-        <img src="images/skills/data storytelling.jpg" alt="Data Storytelling">
-        <p>Data Storytelling</p>
+      <!-- Add more domains/projects here -->
+    </div>
+  </div>
+</section>
+
+<!-- Articles Section (Your Medium Content) -->
+<section id="articles" class="section-pad articles-section">
+  <div class="container">
+    <h2 class="section-title text-center">Featured Articles & Thought Leadership</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
+            <p class="card-text small">A comprehensive guide to the world’s most widely used sustainability reporting framework.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
+            <p class="card-text small">Exploring how ESG practices affect company financial performance and market value.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
+            <p class="card-text small">A deep dive into Scope 3 emissions and best practices in GHG reporting.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- ===== Projects Section ===== -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project">
-        <img src="images/projects/flight data analysis.png" alt="Flight Data Analysis">
-        <h3>Flight Data Analysis</h3>
-        <p>Exploring flight trends and delays using Python.</p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
+            <p class="card-text small">How companies can use GHG LCA for environmental responsibility.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
       </div>
-      <div class="project">
-        <img src="images/projects/food waste management.png" alt="Food Waste Management">
-        <h3>Food Waste Management</h3>
-        <p>Built a Streamlit dashboard to track and reduce food waste.</p>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">Mitigation Goal: Allowable Emissions — Quiz</h6>
+            <p class="card-text small">Short exercise to test understanding of emissions limits in modern sustainability frameworks.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== Certificates Section ===== -->
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="certificates-grid">
-      <div class="certificate">
-        <img src="images/certificates/Certificate1.jpg" alt="Certificate 1">
-        <p>Data Analytics Master Course</p>
-      </div>
-      <div class="certificate">
-        <img src="images/certificates/Certificate2.png" alt="Certificate 2">
-        <p>The Materiality of ESG Factors</p>
-      </div>
-      <div class="certificate">
-        <img src="images/certificates/Certificate3.png" alt="Certificate 3">
-        <p>Google Data Analytics</p>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">FabIndia: Tradition with Sustainability</h6>
+            <p class="card-text small">A look at how FabIndia integrates ESG into business operations for sustainable growth.</p>
+            <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- ===== Contact Section ===== -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p style="text-align:center;">Let’s connect through my professional networks:</p>
-    <div class="contact-icons">
-      <a href="https://github.com/anuradha-menon" target="_blank">
-        <img src="icons/github.png" alt="GitHub">
-      </a>
-      <a href="https://www.linkedin.com/in/anuradha-n-menon/" target="_blank">
-        <img src="icons/linkedin.png" alt="LinkedIn">
-      </a>
-      <a href="https://medium.com/@anuradhamenon_76458" target="_blank">
-        <img src="icons/medium.png" alt="Medium">
-      </a>
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank">
-        <img src="icons/upwork.png" alt="Upwork">
-      </a>
+    <!-- Add more article cards as needed -->
+    <div class="text-center mt-3">
+      <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-success btn-sm" target="_blank">More Articles on Medium</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>© 2025 Anuradha Menon | Portfolio</p>
-  </footer>
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-pad testimonials-section">
+  <div class="container">
+    <h2 class="section-title text-center">Testimonials</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <div class="testimonial-card text-center">
+          <div>
+            <span class="text-info font-italic">&#10077;</span>
+            <span class="d-block my-3">Anuradha delivered actionable dashboards far beyond our expectations—her insights directly improved our sustainability KPIs.</span>
+          </div>
+          <div class="testimonial-author mt-3">
+            <img src="images/testimonials/client1.jpg" alt="Client 1">
+            <div>
+              <strong>Priya Singh</strong><br>
+              Sustainability Lead, GreenFoods Pvt. Ltd.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="testimonial-card text-center">
+          <div>
+            <span class="text-info font-italic">&#10077;</span>
+            <span class="d-block my-3">Her analytics and clear data storytelling helped us optimize our aviation planning and boosted our team's confidence in analytics initiatives.</span>
+          </div>
+          <div class="testimonial-author mt-3">
+            <img src="images/testimonials/client2.jpg" alt="Client 2">
+            <div>
+              <strong>Michael Tan</strong><br>
+              Ops Manager, SkyAirways
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more testimonial-cards as needed -->
+    </div>
+  </div>
+</section>
 
-  <!-- ===== Typing Effect JS ===== -->
-  <script>
-    const roles = [
-      "Data Analyst",
-      "ESG Researcher",
-      "Dashboard Builder",
-      "Storyteller with Data"
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    const typingElement = document.querySelector(".typing");
+<!-- Contact Section -->
+<section id="contact" class="section-pad text-center" style="background:#e0f7fa;">
+  <div class="container">
+    <h2 class="section-title">Let's Connect & Collaborate</h2>
+    <p class="lead">Seeking impactful data analytics or ESG projects, consulting, or speaking opportunities.<br>
+    Reach out to discuss partnership or freelance engagements!</p>
+    <p>Email: <a href="mailto:anuradha@email.com">anuradha@email.com</a></p>
+    <div class="my-2">
+      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub"><img src="icons/github.png" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium"><img src="icons/medium.png" alt="Medium"></a>
+      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork"><img src="icons/upwork.png" alt="Upwork"></a>
+    </div>
+  </div>
+</section>
 
-    function typeRole() {
-      if (charIndex < roles[roleIndex].length) {
-        typingElement.textContent += roles[roleIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeRole, 100);
-      } else {
-        setTimeout(eraseRole, 2000);
-      }
-    }
+<!-- Footer -->
+<footer class="footer text-center py-3">
+  <div>
+    <small>© 2025 Anuradha Menon | Portfolio</small>
+  </div>
+</footer>
 
-    function eraseRole() {
-      if (charIndex > 0) {
-        typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseRole, 50);
-      } else {
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeRole, 500);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", typeRole);
-  </script>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
