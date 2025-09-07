@@ -1,286 +1,1743 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anuradha Menon | Portfolio</title>
   <!-- Bootstrap 4 CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Google Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Google Fonts: Poppins and Cabin -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cabin&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/favicon.png" />
   <style>
-    body { font-family:'Inter',Arial,sans-serif; background:linear-gradient(120deg,#f8fafc 75%,#e0f7fa 100%); color:#163447;}
-    .navbar { box-shadow:0 6px 24px rgba(0,0,0,.07);}
-    .section-title {color:#006769;font-size:2rem;font-weight:bold;margin-bottom:32px;}
-    .step-flow {background:#f3fafe;border-radius:16px;padding:32px 20px;margin-bottom:48px;}
-    .step-icon {background:#e0f7fa;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:auto;font-size:2rem;color:#009fae;}
-    .step-label {text-transform:uppercase;font-size:.95rem;font-weight:700;color:#016970;}
-    .projects-section, .articles-section {background:#fff;border-radius:1.5rem;box-shadow:0 4px 14px rgba(0,0,0,.03);}
-    .articles-section {padding-bottom:30px;}
-    .testimonials-section {background:linear-gradient(100deg,#f3faf2 75%,#e7e7f7 100%);border-radius:1.5rem;margin-top:50px;}
-    .testimonial-card {background:#fff;border-radius:12px;box-shadow:0 2px 13px rgba(0,0,0,.06);padding:30px 22px 22px 22px;}
-    .testimonial-author {display:flex;align-items:center;margin-top:17px;}
-    .testimonial-author img {width:56px;height:56px;border-radius:50%;margin-right:18px;}
-    .section-pad {padding:60px 0 50px 0;}
-    .card {border:none;box-shadow:0 4px 14px rgba(0,183,148,.025);}
-    .icon-link img {width:28px;margin:0 10px;transition:.2s transform;vertical-align:middle;}
-    .icon-link img:hover {transform:scale(1.14);}
-    .social-group {display:inline-block;}
-    .jumbotron {padding-top:85px;padding-bottom:55px;}
-    .articles-section .card-img-top {height:100px;object-fit:cover;}
-    .footer {background:#003838;color:#f0f0f0;margin-top:0;}
-    @media (max-width:767px){
-      .section-title{font-size:1.5rem;}
-      .step-label{font-size:.85rem;}
-      .projects-section,.articles-section,.testimonials-section{padding:18px 2px;}
-      .jumbotron{padding-top:100px;padding-bottom:25px;}
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1C2526; /* Charcoal background */
+      color: #E4ECEE; /* Light gray text for contrast */
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8) rotate(2deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); } /* Teal glow */
+      50% { box-shadow: 0 0 20px 5px rgba(46, 196, 182, 0.6); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
+    }
+    @keyframes ripple {
+      0% { transform: scale(0); opacity: 0.5; }
+      100% { transform: scale(4); opacity: 0; }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInBottom {
+      from { opacity: 0; transform: translateY(100px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-15px); }
+      60% { transform: translateY(-7px); }
+    }
+    .animate-on-scroll {
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .navbar {
+      background: linear-gradient(90deg, #163A3E, #2EC4B6); /* Teal gradient */
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+      padding: 1rem 2rem;
+      transition: transform 0.3s ease;
+    }
+    .navbar.scrolled {
+      transform: scale(0.98);
+    }
+    .navbar-brand, .nav-link {
+      color: #E4ECEE !important; /* Light gray */
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #CBF3F0 !important; /* Lighter teal for hover/active */
+      border-bottom: 2px solid #2EC4B6; /* Teal border */
+      transform: scale(1.1);
+      animation: glowPulse 1.5s infinite;
+    }
+    .skip-link {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      z-index: 9999;
+      padding: 10px;
+      background: #2EC4B6; /* Teal */
+      color: #1C2526; /* Charcoal text */
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      top: 10px;
+      left: 10px;
+    }
+    .section-title {
+      color: #2EC4B6; /* Teal */
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 120px;
+      height: 5px;
+      background: #2EC4B6; /* Teal */
+      display: block;
+      margin: 0.75rem auto;
+      animation: zoomIn 0.8s ease-out;
+    }
+    .section-pad {
+      padding: 120px 0;
+    }
+    .scroll-container {
+      background: #2A3436; /* Dark gray */
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 3rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow for contrast */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #2EC4B6 #3C4A4D; /* Teal and darker gray */
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: #3C4A4D; /* Darker gray */
+      border-radius: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #2EC4B6; /* Teal */
+      border-radius: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #1BA39C; /* Darker teal */
+    }
+    .scroll-content {
+      display: inline-block;
+      white-space: nowrap;
+      min-width: 100%;
+    }
+    .step-container {
+      display: inline-block;
+      vertical-align: top;
+      margin: 15px 15px 15px 0;
+      text-align: center;
+      width: 210px;
+      min-width: 210px;
+      box-sizing: border-box;
+      animation: popIn 0.8s ease-out forwards;
+      animation-delay: calc(var(--step-index) * 0.1s);
+    }
+    .step-icon {
+      background: #3C4A4D; /* Darker gray */
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 2.8rem;
+      color: #2EC4B6; /* Teal */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .step-icon:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 4px 12px rgba(46, 196, 182, 0.4); /* Teal shadow */
+    }
+    .step-label {
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #CBF3F0; /* Lighter teal */
+      margin-bottom: 6px;
+    }
+    .step-text {
+      max-width: 180px;
+      font-size: 0.9rem;
+      color: #E4ECEE; /* Light gray */
+      text-align: center;
+      white-space: normal;
+      margin: 0 auto;
+    }
+    .projects-section, .articles-section, .testimonials-section, .certifications-section, .skills-section {
+      background: #2A3436; /* Dark gray */
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      padding: 2rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #2EC4B6 #3C4A4D; /* Teal and darker gray */
+    }
+    .projects-section::-webkit-scrollbar,
+    .articles-section::-webkit-scrollbar,
+    .testimonials-section::-webkit-scrollbar,
+    .certifications-section::-webkit-scrollbar,
+    .skills-section::-webkit-scrollbar {
+      height: 8px;
+    }
+    .projects-section::-webkit-scrollbar-track,
+    .articles-section::-webkit-scrollbar-track,
+    .testimonials-section::-webkit-scrollbar-track,
+    .certifications-section::-webkit-scrollbar-track,
+    .skills-section::-webkit-scrollbar-track {
+      background: #3C4A4D; /* Darker gray */
+      border-radius: 4px;
+    }
+    .projects-section::-webkit-scrollbar-thumb,
+    .articles-section::-webkit-scrollbar-thumb,
+    .testimonials-section::-webkit-scrollbar-thumb,
+    .certifications-section::-webkit-scrollbar-thumb,
+    .skills-section::-webkit-scrollbar-thumb {
+      background: #2EC4B6; /* Teal */
+      border-radius: 4px;
+    }
+    .projects-section::-webkit-scrollbar-thumb:hover,
+    .articles-section::-webkit-scrollbar-thumb:hover,
+    .testimonials-section::-webkit-scrollbar-thumb:hover,
+    .certifications-section::-webkit-scrollbar-thumb:hover,
+    .skills-section::-webkit-scrollbar-thumb:hover {
+      background: #1BA39C; /* Darker teal */
+    }
+    .project-card, .article-card, .testimonial-card, .certification-card, .skill-card {
+      display: inline-block;
+      vertical-align: top;
+      width: 570px;
+      margin-right: 25px;
+      white-space: normal;
+      transition: transform 0.3s ease;
+      min-width: 570px;
+      min-height: 500px;
+      perspective: 1000px;
+    }
+    .project-card, .certification-card, .skill-card, .article-card {
+      animation: popIn 0.8s ease-out forwards;
+      animation-delay: calc(var(--card-index) * 0.1s);
+    }
+    .project-card:hover, .article-card:hover, .testimonial-card:hover, .certification-card:hover, .skill-card:hover {
+      transform: scale(1.05);
+    }
+    .project-card .card, .article-card .card, .testimonial-card, .certification-card .card, .skill-card .card {
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover .card, .article-card:hover .card, .testimonial-card:hover, .certification-card:hover .card, .skill-card:hover .card {
+      transform: rotateX(5deg) rotateY(5deg);
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1); /* White shadow */
+    }
+    .article-card:last-child, .project-card:last-child, .testimonial-card:last-child, .certification-card:last-child, .skill-card:last-child {
+      margin-right: 15px;
+    }
+    .testimonial-card {
+      background: #2A3436; /* Dark gray */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08); /* White shadow */
+      padding: 2rem;
+      width: 300px;
+      min-width: 300px;
+      min-height: 300px;
+      animation: popIn 0.8s ease-out forwards;
+      animation-delay: calc(var(--card-index) * 0.1s);
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .testimonial-author img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 1rem;
+      transition: transform 0.3s ease;
+      animation: glowPulse 2s infinite;
+    }
+    .testimonial-author img:hover {
+      transform: scale(1.2);
+    }
+    .card {
+      border: none;
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); /* White shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #2A3436; /* Dark gray */
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* White shadow */
+    }
+    .card-img-top {
+      width: 100% !important;
+      height: 360px !important;
+      object-fit: cover;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background: #3C4A4D; /* Darker gray */
+      transition: transform 0.3s ease;
+    }
+    .card-img-top:hover {
+      transform: scale(1.15);
+    }
+    .icon-link img {
+      width: 32px;
+      margin: 0 12px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .icon-link img:hover {
+      transform: scale(1.3);
+      opacity: 0.9;
+    }
+    .social-group {
+      display: inline-block;
+      margin: 1rem 0;
+    }
+    .jumbotron {
+      padding: 6rem 0 4rem;
+      background: linear-gradient(135deg, #3C4A4D 60%, #2A3436 100%); /* Dark gray gradient */
+      margin-top: 70px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      position: relative;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .footer {
+      background: #163A3E; /* Dark teal */
+      color: #E4ECEE; /* Light gray */
+      padding: 2rem;
+      text-align: center;
+    }
+    .availability-section {
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
+      color: #1C2526; /* Charcoal text */
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* White shadow */
+    }
+    .availability-section h2 {
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #1C2526; /* Charcoal */
+    }
+    .availability-section p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .availability-icon {
+      width: 48px;
+      vertical-align: middle;
+      margin-left: 1rem;
+      filter: drop-shadow(0 0 3px #E4ECEE); /* Light gray shadow */
+      transition: transform 0.3s ease;
+    }
+    .availability-link:hover .availability-icon {
+      transform: scale(1.3);
+    }
+    .project-tabs, .certification-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      position: relative;
+    }
+    .project-tabs .btn, .certification-tabs .btn {
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
+      color: #1C2526; /* Charcoal */
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-tabs .btn:hover, .certification-tabs .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* White shadow */
+      animation: glowPulse 1.5s infinite;
+    }
+    .project-tabs .btn::before, .certification-tabs .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    .project-tabs .btn:active::before, .certification-tabs .btn:active::before {
+      width: 200px;
+      height: 200px;
+      animation: ripple 0.6s ease-out;
+    }
+    .articles-section {
+      margin-top: 3rem;
+    }
+    .profile-img-container {
+      width: 350px;
+      height: 400px;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* White shadow */
+      animation: zoomIn 0.8s ease-out;
+    }
+    .profile-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .profile-img-container img:hover {
+      transform: scale(1.15);
+    }
+    .stats-section {
+      background: linear-gradient(135deg, #2A3436, #3C4A4D); /* Dark gray gradient */
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      padding: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .stats-card {
+      display: inline-block;
+      width: 200px;
+      margin: 0 20px;
+      padding: 1.5rem;
+      background: #2A3436; /* Dark gray */
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* White shadow */
+      transition: transform 0.3s ease;
+      animation: popIn 0.8s ease-out forwards;
+      animation-delay: calc(var(--card-index) * 0.1s);
+    }
+    .stats-card:hover {
+      transform: scale(1.1);
+    }
+    .stats-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2EC4B6; /* Teal */
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .stats-card.active h3 {
+      transform: scale(1.2);
+    }
+    .stats-card p {
+      font-size: 0.9rem;
+      color: #E4ECEE; /* Light gray */
+    }
+    .modal-content {
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2); /* White shadow */
+      border: none;
+      animation: slideInBottom 0.5s ease-out;
+      backdrop-filter: blur(5px);
+      background: #2A3436; /* Dark gray */
+    }
+    .modal-header {
+      border-bottom: none;
+      padding: 1.5rem 2rem;
+    }
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2EC4B6; /* Teal */
+    }
+    .modal-body {
+      padding: 2rem;
+      color: #E4ECEE; /* Light gray */
+    }
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      animation: zoomIn 0.5s ease-out;
+    }
+    .modal-body p {
+      animation: fadeIn 0.7s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    .modal-footer {
+      border-top: none;
+      padding: 1.5rem 2rem;
+    }
+    .modal-footer .btn {
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
+      color: #1C2526; /* Charcoal */
+      border: none;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .modal-footer .btn:hover {
+      background: linear-gradient(135deg, #1BA39C, #2EC4B6); /* Reversed teal gradient */
+      transform: scale(1.1);
+      animation: glowPulse 1.5s infinite;
+    }
+    .modal-footer .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    .modal-footer .btn:active::before {
+      width: 200px;
+      height: 200px;
+      animation: ripple 0.6s ease-out;
+    }
+    .featured-project {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1); /* White shadow */
+      animation: slideUp 0.8s ease-out;
+    }
+    .featured-project img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .featured-project:hover img {
+      transform: scale(1.15);
+    }
+    /* Scroll Down Animation Styles */
+    .scroll-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem; /* Added margin to position below social icons */
+    }
+    .scroll-down p {
+      margin-top: 1rem;
+      font-family: "Cabin", sans-serif;
+      letter-spacing: 12px;
+      text-indent: 12px;
+      color: #ffffff;
+      animation: 
+        colorText 5s ease-out infinite,
+        nudgeText 5s ease-out infinite;
+    }
+    .mouse {
+      background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #ffffff 50%, #ffffff 100%);
+      position: relative;
+      width: 52px;
+      height: 88px;
+      border-radius: 100px;
+      background-size: 100% 200%;
+      animation: 
+        colorSlide 5s linear infinite,
+        nudgeMouse 5s ease-out infinite;
+    }
+    .mouse::before,
+    .mouse::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+    .mouse::before {
+      width: 46px;
+      height: 82px;
+      background-color: #222a30;
+      border-radius: 100px;
+    }
+    .mouse::after {
+      background-color: #ffffff;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      animation: trackBallSlide 5s linear infinite;
+    }
+    @keyframes colorSlide { 
+      0% { background-position: 0% 100%; }
+      20% { background-position: 0% 0%; }
+      21% { background-color: #4e5559; }
+      29.99% { 
+        background-color: #ffffff;
+        background-position: 0% 0%;
+      }
+      30% { 
+        background-color: #4e5559;
+        background-position: 0% 100%;
+      }
+      50% { background-position: 0% 0%; }
+      51% { background-color: #4e5559; }
+      59% { 
+        background-color: #ffffff;
+        background-position: 0% 0%;
+      }
+      60% { 
+        background-color: #4e5559;
+        background-position: 0% 100%;
+      }
+      80% { background-position: 0% 0%; }
+      81% { background-color: #4e5559; }
+      90%, 100% { background-color: #ffffff; }
+    }
+    @keyframes trackBallSlide {
+      0% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+      6% { 
+        opacity: 1;
+        transform: scale(0.9) translateY(5px);
+      }
+      14% {
+        opacity: 0;
+        transform: scale(0.4) translateY(40px);
+      }
+      15%, 19% {
+        opacity: 0;
+        transform: scale(0.4) translateY(-20px);
+      }
+      28%, 29.99% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+      30% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+      36% { 
+        opacity: 1;
+        transform: scale(0.9) translateY(5px);
+      }
+      44% {
+        opacity: 0;
+        transform: scale(0.4) translateY(40px);
+      }
+      45%, 49% {
+        opacity: 0;
+        transform: scale(0.4) translateY(-20px);
+      }
+      58%, 59.99% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+      66% { 
+        opacity: 1;
+        transform: scale(0.9) translateY(5px);
+      }
+      74% {
+        opacity: 0;
+        transform: scale(0.4) translateY(40px);
+      }
+      75%, 79% {
+        opacity: 0;
+        transform: scale(0.4) translateY(-20px);
+      }
+      88%, 100% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+      }
+    }
+    @keyframes nudgeMouse {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(8px); }
+      30% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+      60% { transform: translateY(0); }
+      80% { transform: translateY(8px); }
+      90% { transform: translateY(0); }
+    }
+    @keyframes nudgeText {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(2px); }
+      30% { transform: translateY(0); }
+      50% { transform: translateY(2px); }
+      60% { transform: translateY(0); }
+      80% { transform: translateY(2px); }
+      90% { transform: translateY(0); }
+    }
+    @keyframes colorText { 
+      21% { color: #4e5559; }
+      30% { color: #ffffff; }
+      51% { color: #4e5559; }
+      60% { color: #ffffff; }
+      81% { color: #4e5559; }
+      90% { color: #ffffff; }
+    }
+    @media (max-width: 767px) {
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .section-pad {
+        padding: 80px 0;
+      }
+      .step-label {
+        font-size: 0.85rem;
+      }
+      .projects-section,
+      .articles-section,
+      .testimonials-section,
+      .certifications-section,
+      .skills-section,
+      .scroll-container,
+      .stats-section {
+        padding: 1.5rem 1rem;
+      }
+      .jumbotron {
+        padding: 4rem 0 2rem;
+        background-attachment: scroll;
+      }
+      .project-card,
+      .article-card,
+      .testimonial-card,
+      .certification-card,
+      .skill-card,
+      .step-container {
+        width: 100%;
+        min-width: 280px;
+        margin-right: 15px;
+        min-height: 360px;
+      }
+      .project-card,
+      .article-card,
+      .certification-card,
+      .skill-card {
+        min-width: 280px !important;
+        min-height: 360px !important;
+      }
+      .card-img-top {
+        width: 100% !important;
+        height: 200px !important;
+        margin-left: 0;
+      }
+      .stats-card {
+        width: 100%;
+        margin: 10px 0;
+      }
+      .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      .step-text {
+        max-width: 100%;
+        font-size: 0.8rem;
+      }
+      .testimonial-author img {
+        width: 70px;
+        height: 70px;
+      }
+      .profile-img-container {
+        width: 260px;
+        height: 300px;
+      }
+      .scroll-down {
+        margin-top: 1.5rem;
+      }
+      .mouse {
+        width: 40px;
+        height: 68px;
+      }
+      .mouse::before {
+        width: 34px;
+        height: 62px;
+      }
+      .mouse::after {
+        width: 8px;
+        height: 8px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll, .project-card, .stats-card, .testimonial-card, .article-card, .certification-card, .skill-card, .featured-project, .modal-content, .nav-link, .step-container, .scroll-down, .mouse, .scroll-down p {
+        animation: none;
+        transition: none;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand font-weight-bold" href="#home">Anuradha Menon</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#process">My Data Process</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
-        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top animate-on-scroll">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="#home">Anuradha Menon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#process">My Data Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#stats">Stats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certifications">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#availability">Availability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#articles">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero Section -->
-<section class="jumbotron text-center" style="background:linear-gradient(135deg,#f8fafc 60%,#e0f7fa 100%);margin-top:65px;">
-  <div class="container">
-    <img src="images/about.jpg" class="rounded-circle mb-3" width="160" height="160" alt="Anuradha Menon">
-    <h1 class="display-4 font-weight-bold">Anuradha Menon</h1>
-    <p class="lead mt-3">Data Analyst & ESG Researcher<br>Delivering actionable analytics for business and sustainability.</p>
-    <a href="docs/Data Science Portfolio with ChatGPT - Prompts.pdf" class="btn btn-primary mt-3" target="_blank">Download My Resume (PDF)</a>
-    <div class="my-3 social-group">
-      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub"><img src="icons/github.png" alt="GitHub"></a>
-      <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn"><img src="icons/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium"><img src="icons/medium.png" alt="Medium"></a>
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork"><img src="icons/upwork.png" alt="Upwork"></a>
+  <!-- Hero Section -->
+  <section id="main-content" class="jumbotron text-center animate-on-scroll">
+    <div class="container">
+      <div class="profile-img-container">
+        <img src="images/about1.png" alt="Anuradha Menon" />
+      </div>
+      <h1 class="display-4 font-weight-bold">Anuradha Menon</h1>
+      <p class="lead mt-3">
+        Data Analyst & ESG Researcher<br />
+        Delivering actionable analytics for business and sustainability.
+      </p>
+      <div class="social-group">
+        <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
+          <img src="icons/github.png" alt="GitHub" />
+        </a>
+        <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
+          <img src="icons/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
+          <img src="icons/medium.png" alt="Medium" />
+        </a>
+        <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
+          <img src="icons/upwork.png" alt="Upwork" />
+        </a>
+      </div>
+      <div class="scroll-down">
+        <div class="mouse"></div>
+        <p>SCROLL</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- My Data Process: Visual Step Flow -->
-<section id="process" class="section-pad">
-  <div class="container step-flow shadow-sm">
-    <h2 class="section-title text-center mb-4">My Data Process</h2>
-    <div class="row text-center">
-      <div class="col-6 col-md-3 mb-4">
-        <div class="step-icon mb-2"><span>1</span></div>
-        <div class="step-label">Data Collection</div>
-        <div class="text-muted small">Sourcing reliable data from databases, APIs, and public datasets.</div>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <div class="step-icon mb-2"><span>2</span></div>
-        <div class="step-label">Data Wrangling</div>
-        <div class="text-muted small">Cleaning, transforming, and validating for accuracy and usability.</div>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <div class="step-icon mb-2"><span>3</span></div>
-        <div class="step-label">Analysis & Modeling</div>
-        <div class="text-muted small">Exploratory analytics, model-building & root cause analysis.</div>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <div class="step-icon mb-2"><span>4</span></div>
-        <div class="step-label">Visualization & Storytelling</div>
-        <div class="text-muted small">Dashboards, business narratives, and user-friendly reports.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects Section: Industry Diversity -->
-<section id="projects" class="section-pad projects-section">
-  <div class="container">
-    <h2 class="section-title text-center">Highlighted Projects</h2>
-    <div class="row">
-      <!-- ESG/Sustainability Project -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="images/projects/food waste management.png" class="card-img-top" alt="Food Waste Management Dashboard">
-          <div class="card-body">
-            <h5 class="card-title text-success">ESG / Sustainability</h5>
-            <h6 class="font-weight-bold">Food Waste Management Analytics</h6>
-            <p class="card-text small">Built a dashboard for tracking & reducing food waste. Executive reports driving measurable, sustainable impact for clients.</p>
+  <!-- My Data Process: Scrollable Section -->
+  <section id="process" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">My Data Process</h2>
+      <div id="processCarousel" class="scroll-container">
+        <div class="scroll-content">
+          <div class="step-container" style="--step-index: 1;">
+            <div class="step-icon">1</div>
+            <div class="step-label">Data Collection</div>
+            <div class="step-text">
+              Sourcing reliable data from databases, APIs, public datasets, web scraping.
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Transportation/Aviation Project -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="images/projects/flight data analysis.png" class="card-img-top" alt="Flight Data Analysis">
-          <div class="card-body">
-            <h5 class="card-title text-info">Transportation</h5>
-            <h6 class="font-weight-bold">Flight Data Analysis</h6>
-            <p class="card-text small">Analyzed international airline performance/delays with SQL & Python. Insights used in route optimization and reporting dashboards.</p>
+          <div class="step-container" style="--step-index: 2;">
+            <div class="step-icon">2</div>
+            <div class="step-label">Data Wrangling</div>
+            <div class="step-text">
+              Cleaning, transforming, merging, and validating for accuracy and usability.
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Retail/Demand Forecasting Project -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="images/projects/retail_sales.png" class="card-img-top" alt="Retail Sales Forecasting">
-          <div class="card-body">
-            <h5 class="card-title text-warning">Retail</h5>
-            <h6 class="font-weight-bold">Retail Demand Forecasting</h6>
-            <p class="card-text small">Developed time-series models for sales forecasting. Helped chains optimize inventory and marketing campaigns.</p>
+          <div class="step-container" style="--step-index: 3;">
+            <div class="step-icon">3</div>
+            <div class="step-label">Exploratory Analysis</div>
+            <div class="step-text">
+              Hypothesis testing, anomaly detection, statistics, and feature engineering.
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Add more domains/projects here -->
-    </div>
-  </div>
-</section>
-
-<!-- Articles Section (Your Medium Content) -->
-<section id="articles" class="section-pad articles-section">
-  <div class="container">
-    <h2 class="section-title text-center">Featured Articles & Thought Leadership</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
-            <p class="card-text small">A comprehensive guide to the world’s most widely used sustainability reporting framework.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          <div class="step-container" style="--step-index: 4;">
+            <div class="step-icon">4</div>
+            <div class="step-label">Modeling & Forecasting</div>
+            <div class="step-text">
+              Supervised/unsupervised learning, regression, classification, time-series forecasting.
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
-            <p class="card-text small">Exploring how ESG practices affect company financial performance and market value.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          <div class="step-container" style="--step-index: 5;">
+            <div class="step-icon">5</div>
+            <div class="step-label">Visualization</div>
+            <div class="step-text">
+              Interactive dashboards (Power BI, Tableau), charts, and plots.
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
-            <p class="card-text small">A deep dive into Scope 3 emissions and best practices in GHG reporting.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          <div class="step-container" style="--step-index: 6;">
+            <div class="step-icon">6</div>
+            <div class="step-label">Storytelling</div>
+            <div class="step-text">
+              Crafting engaging business narratives to inform and influence decisions.
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
-            <p class="card-text small">How companies can use GHG LCA for environmental responsibility.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
+          <div class="step-container" style="--step-index: 7;">
+            <div class="step-icon">7</div>
+            <div class="step-label">Implementation</div>
+            <div class="step-text">
+              Collaborating with teams to apply insights to processes and strategies.
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">Mitigation Goal: Allowable Emissions — Quiz</h6>
-            <p class="card-text small">Short exercise to test understanding of emissions limits in modern sustainability frameworks.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">FabIndia: Tradition with Sustainability</h6>
-            <p class="card-text small">A look at how FabIndia integrates ESG into business operations for sustainable growth.</p>
-            <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm">Read Article</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Add more article cards as needed -->
-    <div class="text-center mt-3">
-      <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-success btn-sm" target="_blank">More Articles on Medium</a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="section-pad testimonials-section">
-  <div class="container">
-    <h2 class="section-title text-center">Testimonials</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6 mb-4">
-        <div class="testimonial-card text-center">
-          <div>
-            <span class="text-info font-italic">&#10077;</span>
-            <span class="d-block my-3">Anuradha delivered actionable dashboards far beyond our expectations—her insights directly improved our sustainability KPIs.</span>
-          </div>
-          <div class="testimonial-author mt-3">
-            <img src="images/testimonials/client1.jpg" alt="Client 1">
-            <div>
-              <strong>Priya Singh</strong><br>
-              Sustainability Lead, GreenFoods Pvt. Ltd.
+          <div class="step-container" style="--step-index: 8;">
+            <div class="step-icon">8</div>
+            <div class="step-label">Monitoring & Optimization</div>
+            <div class="step-text">
+              Tracking KPIs and refining models or analyses for continuous improvement.
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="testimonial-card text-center">
-          <div>
-            <span class="text-info font-italic">&#10077;</span>
-            <span class="d-block my-3">Her analytics and clear data storytelling helped us optimize our aviation planning and boosted our team's confidence in analytics initiatives.</span>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">My Impact</h2>
+      <div class="stats-section">
+        <div class="stats-card" style="--card-index: 1;">
+          <h3 class="counter" data-target="13">0</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stats-card" style="--card-index: 2;">
+          <h3 class="counter" data-target="8">0</h3>
+          <p>Clients Served</p>
+        </div>
+        <div class="stats-card" style="--card-index: 3;">
+          <h3 class="counter" data-target="411">0</h3>
+          <p>Hours of Analysis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section: Scrollable Section -->
+  <section id="skills" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div id="skillsCarousel" class="skills-section">
+        <div class="scroll-content">
+          <div class="skill-card" style="--card-index: 1;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/skills/python.png" class="card-img-top" alt="Python" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Python</h6>
+                <p class="card-text small">
+                  Proficient in Python for data analysis, utilizing libraries such as Pandas, NumPy, and Scikit-learn to perform data wrangling, statistical analysis, and machine learning tasks. Experienced in automating data pipelines and building predictive models.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="testimonial-author mt-3">
-            <img src="images/testimonials/client2.jpg" alt="Client 2">
-            <div>
-              <strong>Michael Tan</strong><br>
-              Ops Manager, SkyAirways
+          <div class="skill-card" style="--card-index: 2;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/skills/sql.png" class="card-img-top" alt="SQL" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">SQL</h6>
+                <p class="card-text small">
+                  Skilled in writing complex SQL queries for data extraction, transformation, and analysis. Proficient in designing and optimizing database schemas, including snowflake schemas, and working with relational databases like PostgreSQL and MySQL.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card" style="--card-index: 3;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/skills/data visualization.png" class="card-img-top" alt="Data Visualization" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Data Visualization</h6>
+                <p class="card-text small">
+                  Expertise in creating impactful visualizations using Power BI, Tableau, and Matplotlib. Skilled in designing interactive dashboards and clear, concise charts that communicate insights effectively to stakeholders.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card" style="--card-index: 4;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/skills/data storytelling.png" class="card-img-top" alt="Data Storytelling" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Data Storytelling</h6>
+                <p class="card-text small">
+                  Adept at crafting compelling narratives from data to drive decision-making. Experienced in translating complex analytical findings into actionable insights for diverse audiences, enhancing business strategies and stakeholder engagement.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Add more testimonial-cards as needed -->
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section-pad text-center" style="background:#e0f7fa;">
+  <!-- Projects Section: Scrollable Section -->
+  <section id="projects" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Highlighted Projects</h2>
+      <div class="featured-project mb-4">
+        <img src="images/projects/my portfolio website.png" alt="Featured Project: Personal Portfolio Website" />
+      </div>
+      <div id="projectsCarousel" class="projects-section">
+        <div class="scroll-content">
+          <div class="project-card" style="--card-index: 1;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/my portfolio website.png" class="card-img-top" alt="Personal Portfolio Website" />
+              <div class="card-body">
+                <h5 class="card-title" style="color: #2EC4B6;">Personal Portfolio Website</h5>
+                <h6 class="font-weight-bold">Anuradha Menon’s Professional Portfolio</h6>
+                <p class="card-text small">
+                  Developed this fully responsive, recruiter-friendly portfolio website showcasing my data analytics projects, skills, articles, and testimonials using Bootstrap and modern web technologies.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Personal Portfolio Website" data-description="Developed this fully responsive, recruiter-friendly portfolio website showcasing my data analytics projects, skills, articles, and testimonials using Bootstrap and modern web technologies." data-image="images/projects/my portfolio website.png" data-code="https://github.com/anuradha-menon/portfolio-website" data-blog="https://medium.com/@anuradhamenon_76458/portfolio-website" data-website="https://anuradhamenon.github.io">Preview</button>
+                  <a href="https://github.com/anuradha-menon/portfolio-website" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/portfolio-website" target="_blank" class="btn">View Blog</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 2;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/food waste management.png" class="card-img-top" alt="Food Waste Management Analytics" />
+              <div class="card-body">
+                <h5 class="card-title" style="color: #2EC4B6;">ESG / Sustainability</h5>
+                <h6 class="font-weight-bold">Food Waste Management Analytics</h6>
+                <p class="card-text small">
+                  Built a dashboard for tracking & reducing food waste. Executive reports driving measurable, sustainable impact.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Food Waste Management Analytics" data-description="Built a dashboard for tracking & reducing food waste. Executive reports driving measurable, sustainable impact." data-image="images/projects/food waste management.png" data-code="https://github.com/anuradha-menon/food-waste-analytics" data-blog="https://medium.com/@anuradhamenon_76458/food-waste-analytics">Preview</button>
+                  <a href="https://github.com/anuradha-menon/Food_Donation_App" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/food-waste-analytics" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 3;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/flight data analysis.png" class="card-img-top" alt="Flight Data Analysis" />
+              <div class="card-body">
+                <h5 class="card-title" style="color: #2EC4B6;">Transportation</h5>
+                <h6 class="font-weight-bold">Flight Data Analysis</h6>
+                <p class="card-text small">
+                  Analyzed airline performance and delays using SQL/Python. Route optimization dashboards & insights.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Flight Data Analysis" data-description="Analyzed airline performance and delays using SQL/Python. Route optimization dashboards & insights." data-image="images/projects/flight data analysis.png" data-code="https://github.com/anuradha-menon/flight-data-analysis" data-blog="https://medium.com/@anuradhamenon_76458/flight-data-analysis">Preview</button>
+                  <a href="https://github.com/anuradha-menon/Airlines-performance" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/flight-data-analysis" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 4;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/sales forecasting.png" class="card-img-top" alt="Sales Forecasting" />
+              <div class="card-body">
+                <h5 class="card-title" style="color: #2EC4B6;">Sales</h5>
+                <h6 class="font-weight-bold">Sales Forecasting</h6>
+                <p class="card-text small">
+                  Time-series sales forecasting to optimize inventory and marketing.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Sales Forecasting" data-description="Time-series sales forecasting to optimize inventory and marketing." data-image="images/projects/sales forecasting.png" data-code="https://github.com/anuradha-menon/sales-demand-forecasting" data-blog="https://medium.com/@anuradhamenon_76458/sales-demand-forecasting">Preview</button>
+                  <a href="https://github.com/anuradha-menon/sales-demand-forecasting" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/sales-demand-forecasting" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 5;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/accenture forage certificate.png" class="card-img-top" alt="Accenture Data Analytics Simulation" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Accenture Data Analytics Simulation (Forage)</h6>
+                <p class="card-text small">
+                  Analyzed 7 datasets for sentiment analysis, data cleaning; built Excel dashboards and presented via PowerPoint & video.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Accenture Data Analytics Simulation" data-description="Analyzed 7 datasets for sentiment analysis, data cleaning; built Excel dashboards and presented via PowerPoint & video." data-image="images/projects/accenture forage certificate.png" data-code="https://github.com/anuradha-menon/accenture-simulation" data-blog="https://medium.com/@anuradhamenon_76458/accenture-simulation">Preview</button>
+                  <a href="https://github.com/anuradha-menon/accenture-simulation" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon/accenture-simulation" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 6;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/ipl analysis.png" class="card-img-top" alt="IPL Analytics Dashboard" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">IPL Analytics Dashboard (Power BI/Tableau)</h6>
+                <p class="card-text small">
+                  Identified top players, auction strategies; supported fan engagement and broadcasting optimization.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="IPL Analytics Dashboard" data-description="Identified top players, auction strategies; supported fan engagement and broadcasting optimization." data-image="images/projects/ipl analysis.png" data-code="https://github.com/anuradha-menon/ipl-analytics" data-blog="https://medium.com/@anuradhamenon_76458/ipl-analytics">Preview</button>
+                  <a href="https://github.com/anuradha-menon/ipl-analytics" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/ipl-analytics" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 7;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/cricbuzz.png" class="card-img-top" alt="Cricket Live Analytics App" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Cricket Live Analytics App (SQL + Cricbuzz API)</h6>
+                <p class="card-text small">
+                  Built web app with real-time match updates, SQL-driven analytics, and CRUD operations.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Cricket Live Analytics App" data-description="Built web app with real-time match updates, SQL-driven analytics, and CRUD operations." data-image="images/projects/cricbuzz.png" data-code="https://github.com/anuradha-menon/cricket-analytics" data-blog="https://medium.com/@anuradhamenon_76458/cricket-analytics">Preview</button>
+                  <a href="https://github.com/anuradha-menon/cricket-analytics" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/cricket-analytics" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 8;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/web traffic keywords.png" class="card-img-top" alt="Web Traffic and Keywords" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Web Traffic and Keywords (Upskilling, IIMSkills)</h6>
+                <p class="card-text small">
+                  Competitor keyword analysis using Python; designed PostgreSQL snowflake schema; built Power BI dashboards; applied K-Means clustering to segment audiences.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Web Traffic and Keywords" data-description="Competitor keyword analysis using Python; designed PostgreSQL snowflake schema; built Power BI dashboards; applied K-Means clustering to segment audiences." data-image="images/projects/web traffic keywords.png" data-code="https://github.com/anuradha-menon/web-traffic-keywords" data-blog="https://medium.com/@anuradhamenon_76458/web-traffic-keywords">Preview</button>
+                  <a href="https://github.com/anuradha-menon/web-traffic-keywords" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/web-traffic-keywords" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 9;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/bike dekho.png" class="card-img-top" alt="BikeDekho Sales Analysis" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">BikeDekho Sales Analysis</h6>
+                <p class="card-text small">
+                  Analyzed sales data with Python and Excel; uncovered regional & demographic buying patterns.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="BikeDekho Sales Analysis" data-description="Analyzed sales data with Python and Excel; uncovered regional & demographic buying patterns." data-image="images/projects/bike dekho.png" data-code="https://github.com/anuradha-menon/bikedekho-sales" data-blog="https://medium.com/@anuradhamenon_76458/bikedekho-sales">Preview</button>
+                  <a href="https://github.com/anuradha-menon/bikedekho-sales" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/bikedekho-sales" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 10;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/uber supply demand.png" class="card-img-top" alt="Uber Supply-Demand Analysis" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Uber Supply-Demand Analysis</h6>
+                <p class="card-text small">
+                  Analyzed ride requests (Airport vs City); identified peak-hour mismatches; proposed operational strategies.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Uber Supply-Demand Analysis" data-description="Analyzed ride requests (Airport vs City); identified peak-hour mismatches; proposed operational strategies." data-image="images/projects/uber supply demand.png" data-code="https://github.com/anuradha-menon/uber-supply-demand" data-blog="https://medium.com/@anuradhamenon_76458/uber-supply-demand">Preview</button>
+                  <a href="https://github.com/anuradha-menon/Uber_Supply_Demand_Gap_Analysis" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/uber-supply-demand" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 11;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/bird analysis.png" class="card-img-top" alt="Bird Observation Data Analysis" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Bird Observation Data Analysis</h6>
+                <p class="card-text small">
+                  Cleaned and standardized multi-source data; habitat and species-level comparative analysis.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Bird Observation Data Analysis" data-description="Cleaned and standardized multi-source data; habitat and species-level comparative analysis." data-image="images/projects/bird analysis.png" data-code="https://github.com/anuradha-menon/bird-observation" data-blog="https://medium.com/@anuradhamenon_76458/bird-observation">Preview</button>
+                  <a href="https://github.com/anuradha-menon/bird-observation" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/bird-observation" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 12;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/customer-segmentation.png" class="card-img-top" alt="Customer Segmentation Analysis" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Customer Segmentation Analysis</h6>
+                <p class="card-text small">
+                  Applied clustering techniques to segment customers, optimizing marketing strategies.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Customer Segmentation Analysis" data-description="Applied clustering techniques to segment customers, optimizing marketing strategies." data-image="images/projects/customer-segmentation.png" data-code="https://github.com/anuradha-menon/customer-segmentation" data-blog="https://medium.com/@anuradhamenon_76458/customer-segmentation">Preview</button>
+                  <a href="https://github.com/anuradha-menon/customer-segmentation" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/customer-segmentation" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" style="--card-index: 13;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/projects/predictive-maintenance.png" class="card-img-top" alt="Predictive Maintenance Dashboard" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Predictive Maintenance Dashboard</h6>
+                <p class="card-text small">
+                  Developed a dashboard for predictive maintenance using time-series analysis.
+                </p>
+                <div class="project-tabs">
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Predictive Maintenance Dashboard" data-description="Developed a dashboard for predictive maintenance using time-series analysis." data-image="images/projects/predictive-maintenance.png" data-code="https://github.com/anuradha-menon/predictive-maintenance" data-blog="https://medium.com/@anuradhamenon_76458/predictive-maintenance">Preview</button>
+                  <a href="https://github.com/anuradha-menon/predictive-maintenance" target="_blank" class="btn">View Code</a>
+                  <a href="https://medium.com/@anuradhamenon_76458/predictive-maintenance" target="_blank" class="btn">View Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section: Scrollable Section -->
+  <section id="certifications" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div id="certificationsCarousel" class="certifications-section">
+        <div class="scroll-content">
+          <div class="certification-card" style="--card-index: 1;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/certifications/certificate1.jpg" class="card-img-top" alt="Data Analytics Mster Course Certification" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Data Analytics Master Course Certification</h6>
+                <p class="card-text small">
+                  Completed an advanced course in data analytics, covering data wrangling, visualization, and predictive modeling using Python and SQL.
+                </p>
+                <div class="certification-tabs">
+                  <a href="https://example.com/cert1" target="_blank" class="btn">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="certification-card" style="--card-index: 2;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/certifications/certificate2.png" class="card-img-top" alt="ESG Research Certification" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">The Materiality of ESG Factors Certification</h6>
+                <p class="card-text small">
+                  Earned a certification in material factors affecting ESG, focusing on financial, reporting, compliance, risk factors, strategies and environmental impact.
+                </p>
+                <div class="certification-tabs">
+                  <a href="https://example.com/cert2" target="_blank" class="btn">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="certification-card" style="--card-index: 3;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/certifications/certificate3.png" class="card-img-top" alt="Google Data Analytics Certification" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Google Data Analytics Certification</h6>
+                <p class="card-text small">
+                  Mastered the power of data for creating interactive dashboards and advanced data visualizations along with coding for python and R.
+                </p>
+                <div class="certification-tabs">
+                  <a href="https://example.com/cert3" target="_blank" class="btn">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="certification-card" style="--card-index: 4;">
+            <div class="card h-100 shadow-sm">
+              <img src="images/certifications/python-cert.png" class="card-img-top" alt="Python for Data Science" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Python for Data Science</h6>
+                <p class="card-text small">
+                  Certified in Python for data science, including libraries like Pandas, NumPy, and Scikit-learn for data analysis and machine learning.
+                </p>
+                <div class="certification-tabs">
+                  <a href="https://example.com/cert4" target="_blank" class="btn">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upwork Availability Section -->
+  <section id="availability" class="availability-section animate-on-scroll">
+    <h2>Available for Freelance & Contract Work</h2>
+    <p>
+      I am actively accepting new data analytics, ESG research, and dashboarding projects on Upwork.<br />
+      Whether starting your analytics journey or optimizing existing processes, I can deliver actionable insights.<br />
+      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" rel="noopener" style="color: #1C2526; font-weight: 700;" class="availability-link">
+        View my Upwork profile here
+        <img src="icons/upwork.png" alt="Upwork" class="availability-icon" />
+      </a>
+    </p>
+  </section>
+
+  <!-- Articles Section: Scrollable Section -->
+  <section id="articles" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Featured Articles & Thought Leadership</h2>
+      <div id="articlesCarousel" class="articles-section">
+        <div class="scroll-content">
+          <div class="article-card" style="--card-index: 1;">
+            <div class="card h-100">
+              <img src="images/articles/GRI.png" class="card-img-top" alt="Understanding the Global Reporting Initiative" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
+                <p class="card-text small">
+                  Comprehensive guide on the world's most widely used sustainability reporting framework.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+          <div class="article-card" style="--card-index: 2;">
+            <div class="card h-100">
+              <img src="images/articles/ESG research.png" class="card-img-top" alt="The Impact of ESG Disclosure on Firm Value" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
+                <p class="card-text small">
+                  Exploring how ESG practices affect company financial performance and market value.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+          <div class="article-card" style="--card-index: 3;">
+            <div class="card h-100">
+              <img src="images/articles/value chain.png" class="card-img-top" alt="The Corporate Value Chain" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
+                <p class="card-text small">
+                  A deep dive into Scope 3 emissions and the best practices in GHG reporting.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+          <div class="article-card" style="--card-index: 4;">
+            <div class="card h-100">
+              <img src="images/articles/lca.png" alt="Driving Sustainability" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
+                <p class="card-text small">
+                  How companies use GHG LCA for environmental responsibility and sustainability strategies.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+          <div class="article-card" style="--card-index: 5;">
+            <div class="card h-100">
+              <img src="images/articles/mitigation goal.png" class="card-img-top" alt="Mitigation Goal" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">Mitigation Goal: Allowable Emissions</h6>
+                <p class="card-text small">
+                  A quiz to test understanding of emissions limits in sustainability frameworks.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+          <div class="article-card" style="--card-index: 6;">
+            <div class="card h-100">
+              <img src="images/articles/fab india.png" class="card-img-top" alt="FabIndia: Tradition with Sustainability" />
+              <div class="card-body">
+                <h6 class="font-weight-bold">FabIndia: Tradition with Sustainability</h6>
+                <p class="card-text small">
+                  Analysis of FabIndia’s integration of ESG into business operations for sustainable growth.
+                </p>
+                <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;" target="_blank">More Articles on Medium</a>
+      </div>
+    </div>
+  </section>
+
+   <!-- Testimonials Section: Scrollable Section -->
+  <section id="testimonials" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div id="testimonialsCarousel" class="testimonials-section">
+        <div class="scroll-content">
+          <div class="testimonial-card text-center" style="--card-index: 1;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Anuradha delivered actionable dashboards far beyond our expectations — her insights directly improved our sustainability KPIs.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/about.png" alt="Anuradha Menon" />
+              <div>
+                <strong>Anuradha Menon</strong><br />
+                Sustainability Lead, GreenFoods Pvt. Ltd.
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 2;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Her analytics and clear data storytelling helped us optimize our aviation planning and boosted our team's confidence in analytics initiatives.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client2.jpg" alt="Michael Tan" />
+              <div>
+                <strong>Michael Tan</strong><br />
+                Ops Manager, SkyAirways
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 3;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Professional, timely, and insightful — Anuradha’s work empowered our team to better use data for decision-making.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client3.jpg" alt="Rohit Mehta" />
+              <div>
+                <strong>Rohit Mehta</strong><br />
+                Project Manager, DataBridge Analytics
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 4;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Anuradha’s expertise in ESG analytics allowed our company to significantly improve reporting and stakeholder engagement.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client4.jpg" alt="Sarah Lee" />
+              <div>
+                <strong>Sarah Lee</strong><br />
+                ESG Consultant, GreenFuture Inc.
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 5;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Anuradha's data models have transformed our business decisions with precision and insight.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client5.jpg" alt="John Doe" />
+              <div>
+                <strong>John Doe</strong><br />
+                CEO, TechCorp
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 6;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Outstanding ESG analysis; highly recommend for any sustainability project.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client6.jpg" alt="Jane Smith" />
+              <div>
+                <strong>Jane Smith</strong><br />
+                Director, EcoSolutions
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 7;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Her visualizations are clear, insightful, and always on point.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client7.jpg" alt="Alex Johnson" />
+              <div>
+                <strong>Alex Johnson</strong><br />
+                Analyst, DataFirm
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card text-center" style="--card-index: 8;">
+            <div>
+              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
+              <span class="d-block my-3">
+                Reliable and innovative data analyst who delivers results every time.
+              </span>
+            </div>
+            <div class="testimonial-author mt-3">
+              <img src="images/testimonials/client8.jpg" alt="Emily Davis" />
+              <div>
+                <strong>Emily Davis</strong><br />
+                Manager, Innovate Inc.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-pad animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="text-center">
+        Interested in collaborating? Reach out to discuss data analytics, ESG research, or freelance opportunities.
+      </p>
+      <div class="text-center mt-4">
+        <a href="mailto:anuradhamenon@gmail.com" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;">Email Me</a>
+        <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;">Hire Me on Upwork</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer">
   <div class="container">
-    <h2 class="section-title">Let's Connect & Collaborate</h2>
-    <p class="lead">Seeking impactful data analytics or ESG projects, consulting, or speaking opportunities.<br>
-    Reach out to discuss partnership or freelance engagements!</p>
-    <p>Email: <a href="mailto:anuradha@email.com">anuradha@email.com</a></p>
-    <div class="my-2">
-      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub"><img src="icons/github.png" alt="GitHub"></a>
-      <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn"><img src="icons/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium"><img src="icons/medium.png" alt="Medium"></a>
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork"><img src="icons/upwork.png" alt="Upwork"></a>
+    <p>&copy; 2025 Anuradha Menon. All rights reserved.</p>
+    <div class="social-group">
+      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
+        <img src="icons/github.png" alt="GitHub" />
+      </a>
+      <a href="https://linkedin.com/in/anuradha-n-menon" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
+        <img src="icons/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
+        <img src="icons/medium.png" alt="Medium" />
+      </a>
+      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
+        <img src="icons/upwork.png" alt="Upwork" />
+      </a>
     </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer text-center py-3">
-  <div>
-    <small>© 2025 Anuradha Menon | Portfolio</small>
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
+<!-- Modal for Project Details -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="" class="project-image" alt="Project Image" />
+        <p class="project-description"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn project-code-link" target="_blank">View Code</a>
+        <a href="#" class="btn project-blog-link" target="_blank">View Blog</a>
+        <a href="#" class="btn project-website-link" target="_blank">Visit Website</a>
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+  // Scroll Animation for elements with animate-on-scroll class
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => observer.observe(element));
+  });
+
+  // Navbar shrink on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Counter Animation for Stats Section
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // Animation speed
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      }, { threshold: 0.5 });
+
+      observer.observe(counter);
+    });
+  };
+
+  // Trigger counter animation when stats section is visible
+  document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.querySelector('#stats');
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        observer.unobserve(statsSection);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(statsSection);
+  });
+
+  // Modal Content Update
+  $('#projectModal').on('show.bs.modal', function (event) {
+    const button = $(event.relatedTarget);
+    const title = button.data('title');
+    const description = button.data('description');
+    const image = button.data('image');
+    const code = button.data('code');
+    const blog = button.data('blog');
+    const website = button.data('website');
+
+    const modal = $(this);
+    modal.find('.modal-title').text(title);
+    modal.find('.project-image').attr('src', image).attr('alt', title);
+    modal.find('.project-description').text(description);
+    modal.find('.project-code-link').attr('href', code);
+    modal.find('.project-blog-link').attr('href', blog);
+    modal.find('.project-website-link').attr('href', website);
+
+    // Hide website link if not provided
+    if (!website) {
+      modal.find('.project-website-link').hide();
+    } else {
+      modal.find('.project-website-link').show();
+    }
+  });
+
+  // Smooth Scroll for Navbar Links
+  document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      window.scrollTo({
+        top: targetElement.offsetTop - 70,
+        behavior: 'smooth'
+      });
+
+      // Update active nav link
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Highlight active section in navbar on scroll
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY + 100;
+    document.querySelectorAll('section').forEach(section => {
+      if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === section.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
