@@ -13,8 +13,8 @@
   <style>
     body {
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #1C2526; /* Charcoal background */
-      color: #E4ECEE; /* Light gray text for contrast */
+      background: #1C2526;
+      color: #E4ECEE;
       overflow-x: hidden;
       animation: fadeIn 1.2s ease-in;
     }
@@ -31,7 +31,7 @@
       to { opacity: 1; transform: scale(1) rotate(0); }
     }
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); } /* Teal glow */
+      0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
       50% { box-shadow: 0 0 20px 5px rgba(46, 196, 182, 0.6); }
       100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
     }
@@ -52,6 +52,11 @@
       40% { transform: translateY(-15px); }
       60% { transform: translateY(-7px); }
     }
+    @keyframes bitcoinGlow {
+      0% { box-shadow: 0 0 5px 0 #F4A261, 0 0 10px 0 #E76F51; }
+      50% { box-shadow: 0 0 20px 5px #F4A261, 0 0 30px 10px #E76F51; }
+      100% { box-shadow: 0 0 5px 0 #F4A261, 0 0 10px 0 #E76F51; }
+    }
     .animate-on-scroll {
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
@@ -60,7 +65,7 @@
       transform: translateY(0);
     }
     .navbar {
-      background: linear-gradient(90deg, #163A3E, #2EC4B6); /* Teal gradient */
+      background: linear-gradient(90deg, #163A3E, #2EC4B6);
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
       padding: 1rem 2rem;
       transition: transform 0.3s ease;
@@ -69,13 +74,13 @@
       transform: scale(0.98);
     }
     .navbar-brand, .nav-link {
-      color: #E4ECEE !important; /* Light gray */
+      color: #E4ECEE !important;
       font-weight: 600;
       transition: color 0.3s ease, transform 0.2s ease;
     }
     .nav-link:hover, .nav-link.active {
-      color: #CBF3F0 !important; /* Lighter teal for hover/active */
-      border-bottom: 2px solid #2EC4B6; /* Teal border */
+      color: #CBF3F0 !important;
+      border-bottom: 2px solid #2EC4B6;
       transform: scale(1.1);
       animation: glowPulse 1.5s infinite;
     }
@@ -85,8 +90,8 @@
       left: -9999px;
       z-index: 9999;
       padding: 10px;
-      background: #2EC4B6; /* Teal */
-      color: #1C2526; /* Charcoal text */
+      background: #2EC4B6;
+      color: #1C2526;
       font-weight: 600;
     }
     .skip-link:focus {
@@ -94,7 +99,7 @@
       left: 10px;
     }
     .section-title {
-      color: #2EC4B6; /* Teal */
+      color: #2EC4B6;
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: 0.01em;
@@ -106,7 +111,7 @@
       content: '';
       width: 120px;
       height: 5px;
-      background: #2EC4B6; /* Teal */
+      background: #2EC4B6;
       display: block;
       margin: 0.75rem auto;
       animation: zoomIn 0.8s ease-out;
@@ -115,30 +120,30 @@
       padding: 120px 0;
     }
     .scroll-container {
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
       border-radius: 20px;
       padding: 20px;
       margin-bottom: 3rem;
       overflow-x: auto;
       white-space: nowrap;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow for contrast */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: #2EC4B6 #3C4A4D; /* Teal and darker gray */
+      scrollbar-color: #2EC4B6 #3C4A4D;
     }
     .scroll-container::-webkit-scrollbar {
       height: 8px;
     }
     .scroll-container::-webkit-scrollbar-track {
-      background: #3C4A4D; /* Darker gray */
+      background: #3C4A4D;
       border-radius: 4px;
     }
     .scroll-container::-webkit-scrollbar-thumb {
-      background: #2EC4B6; /* Teal */
+      background: #2EC4B6;
       border-radius: 4px;
     }
     .scroll-container::-webkit-scrollbar-thumb:hover {
-      background: #1BA39C; /* Darker teal */
+      background: #1BA39C;
     }
     .scroll-content {
       display: inline-block;
@@ -157,7 +162,7 @@
       animation-delay: calc(var(--step-index) * 0.1s);
     }
     .step-icon {
-      background: #3C4A4D; /* Darker gray */
+      background: #3C4A4D;
       border-radius: 50%;
       width: 80px;
       height: 80px;
@@ -166,38 +171,38 @@
       justify-content: center;
       margin: 0 auto 12px;
       font-size: 2.8rem;
-      color: #2EC4B6; /* Teal */
+      color: #2EC4B6;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .step-icon:hover {
       transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 4px 12px rgba(46, 196, 182, 0.4); /* Teal shadow */
+      box-shadow: 0 4px 12px rgba(46, 196, 182, 0.4);
     }
     .step-label {
       text-transform: uppercase;
       font-size: 0.95rem;
       font-weight: 600;
-      color: #CBF3F0; /* Lighter teal */
+      color: #CBF3F0;
       margin-bottom: 6px;
     }
     .step-text {
       max-width: 180px;
       font-size: 0.9rem;
-      color: #E4ECEE; /* Light gray */
+      color: #E4ECEE;
       text-align: center;
       white-space: normal;
       margin: 0 auto;
     }
     .projects-section, .articles-section, .testimonials-section, .certifications-section, .skills-section {
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       padding: 2rem;
       overflow-x: auto;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: #2EC4B6 #3C4A4D; /* Teal and darker gray */
+      scrollbar-color: #2EC4B6 #3C4A4D;
     }
     .projects-section::-webkit-scrollbar,
     .articles-section::-webkit-scrollbar,
@@ -211,7 +216,7 @@
     .testimonials-section::-webkit-scrollbar-track,
     .certifications-section::-webkit-scrollbar-track,
     .skills-section::-webkit-scrollbar-track {
-      background: #3C4A4D; /* Darker gray */
+      background: #3C4A4D;
       border-radius: 4px;
     }
     .projects-section::-webkit-scrollbar-thumb,
@@ -219,7 +224,7 @@
     .testimonials-section::-webkit-scrollbar-thumb,
     .certifications-section::-webkit-scrollbar-thumb,
     .skills-section::-webkit-scrollbar-thumb {
-      background: #2EC4B6; /* Teal */
+      background: #2EC4B6;
       border-radius: 4px;
     }
     .projects-section::-webkit-scrollbar-thumb:hover,
@@ -227,7 +232,7 @@
     .testimonials-section::-webkit-scrollbar-thumb:hover,
     .certifications-section::-webkit-scrollbar-thumb:hover,
     .skills-section::-webkit-scrollbar-thumb:hover {
-      background: #1BA39C; /* Darker teal */
+      background: #1BA39C;
     }
     .project-card, .article-card, .testimonial-card, .certification-card, .skill-card {
       display: inline-block;
@@ -253,15 +258,15 @@
     }
     .project-card:hover .card, .article-card:hover .card, .testimonial-card:hover, .certification-card:hover .card, .skill-card:hover .card {
       transform: rotateX(5deg) rotateY(5deg);
-      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1); /* White shadow */
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
     }
     .article-card:last-child, .project-card:last-child, .testimonial-card:last-child, .certification-card:last-child, .skill-card:last-child {
       margin-right: 15px;
     }
     .testimonial-card {
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08); /* White shadow */
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
       padding: 2rem;
       width: 300px;
       min-width: 300px;
@@ -287,13 +292,13 @@
     }
     .card {
       border: none;
-      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); /* White shadow */
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
     }
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* White shadow */
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
     }
     .card-img-top {
       width: 100% !important;
@@ -301,7 +306,7 @@
       object-fit: cover;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-      background: #3C4A4D; /* Darker gray */
+      background: #3C4A4D;
       transition: transform 0.3s ease;
     }
     .card-img-top:hover {
@@ -322,35 +327,35 @@
     }
     .jumbotron {
       padding: 6rem 0 4rem;
-      background: linear-gradient(135deg, #3C4A4D 60%, #2A3436 100%); /* Dark gray gradient */
+      background: linear-gradient(135deg, #3C4A4D 60%, #2A3436 100%);
       margin-top: 70px;
       border-radius: 0 0 20px 20px;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       position: relative;
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
     }
     .footer {
-      background: #163A3E; /* Dark teal */
-      color: #E4ECEE; /* Light gray */
+      background: #163A3E;
+      color: #E4ECEE;
       padding: 2rem;
       text-align: center;
     }
     .availability-section {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
-      color: #1C2526; /* Charcoal text */
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
+      color: #1C2526;
       border-radius: 20px;
       padding: 2.5rem;
       margin-bottom: 3rem;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* White shadow */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
     }
     .availability-section h2 {
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #1C2526; /* Charcoal */
+      color: #1C2526;
     }
     .availability-section p {
       font-size: 1.3rem;
@@ -361,7 +366,7 @@
       width: 48px;
       vertical-align: middle;
       margin-left: 1rem;
-      filter: drop-shadow(0 0 3px #E4ECEE); /* Light gray shadow */
+      filter: drop-shadow(0 0 3px #E4ECEE);
       transition: transform 0.3s ease;
     }
     .availability-link:hover .availability-icon {
@@ -375,8 +380,8 @@
       position: relative;
     }
     .project-tabs .btn, .certification-tabs .btn {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
-      color: #1C2526; /* Charcoal */
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
+      color: #1C2526;
       border: none;
       padding: 0.5rem 1.5rem;
       border-radius: 25px;
@@ -388,7 +393,7 @@
     }
     .project-tabs .btn:hover, .certification-tabs .btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* White shadow */
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
       animation: glowPulse 1.5s infinite;
     }
     .project-tabs .btn::before, .certification-tabs .btn::before {
@@ -417,7 +422,7 @@
       margin: 0 auto 1.5rem;
       overflow: hidden;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* White shadow */
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
       animation: zoomIn 0.8s ease-out;
     }
     .profile-img-container img {
@@ -430,9 +435,9 @@
       transform: scale(1.15);
     }
     .stats-section {
-      background: linear-gradient(135deg, #2A3436, #3C4A4D); /* Dark gray gradient */
+      background: linear-gradient(135deg, #2A3436, #3C4A4D);
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05); /* White shadow */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       padding: 2rem;
       margin-bottom: 3rem;
       text-align: center;
@@ -442,9 +447,9 @@
       width: 200px;
       margin: 0 20px;
       padding: 1.5rem;
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* White shadow */
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
       transition: transform 0.3s ease;
       animation: popIn 0.8s ease-out forwards;
       animation-delay: calc(var(--card-index) * 0.1s);
@@ -455,7 +460,7 @@
     .stats-card h3 {
       font-size: 2rem;
       font-weight: 700;
-      color: #2EC4B6; /* Teal */
+      color: #2EC4B6;
       margin-bottom: 0.5rem;
       transition: transform 0.3s ease;
     }
@@ -464,15 +469,15 @@
     }
     .stats-card p {
       font-size: 0.9rem;
-      color: #E4ECEE; /* Light gray */
+      color: #E4ECEE;
     }
     .modal-content {
       border-radius: 15px;
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2); /* White shadow */
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
       border: none;
       animation: slideInBottom 0.5s ease-out;
       backdrop-filter: blur(5px);
-      background: #2A3436; /* Dark gray */
+      background: #2A3436;
     }
     .modal-header {
       border-bottom: none;
@@ -481,11 +486,11 @@
     .modal-title {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #2EC4B6; /* Teal */
+      color: #2EC4B6;
     }
     .modal-body {
       padding: 2rem;
-      color: #E4ECEE; /* Light gray */
+      color: #E4ECEE;
     }
     .modal-body img {
       width: 100%;
@@ -503,8 +508,8 @@
       padding: 1.5rem 2rem;
     }
     .modal-footer .btn {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C); /* Teal gradient */
-      color: #1C2526; /* Charcoal */
+      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
+      color: #1C2526;
       border: none;
       border-radius: 25px;
       transition: background 0.3s ease, transform 0.3s ease;
@@ -512,7 +517,7 @@
       overflow: hidden;
     }
     .modal-footer .btn:hover {
-      background: linear-gradient(135deg, #1BA39C, #2EC4B6); /* Reversed teal gradient */
+      background: linear-gradient(135deg, #1BA39C, #2EC4B6);
       transform: scale(1.1);
       animation: glowPulse 1.5s infinite;
     }
@@ -537,7 +542,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1); /* White shadow */
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
       animation: slideUp 0.8s ease-out;
     }
     .featured-project img {
@@ -548,13 +553,31 @@
     .featured-project:hover img {
       transform: scale(1.15);
     }
-    /* Scroll Down Animation Styles */
+    .featured-project.bitcoin {
+      animation: bitcoinGlow 2s infinite;
+    }
+    .featured-project.bitcoin:hover {
+      animation: bounce 0.6s ease;
+    }
+    .featured-project.bitcoin canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .featured-project.bitcoin:hover canvas {
+      opacity: 1;
+    }
     .scroll-down {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-top: 2rem; /* Added margin to position below social icons */
+      margin-top: 2rem;
     }
     .scroll-down p {
       margin-top: 1rem;
@@ -806,10 +829,7 @@
   </style>
 </head>
 <body>
-  <!-- Skip to Content -->
   <a href="#main-content" class="skip-link">Skip to content</a>
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top animate-on-scroll">
     <div class="container">
       <a class="navbar-brand font-weight-bold" href="#home">Anuradha Menon</a>
@@ -849,8 +869,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero Section -->
   <section id="main-content" class="jumbotron text-center animate-on-scroll">
     <div class="container">
       <div class="profile-img-container">
@@ -881,8 +899,6 @@
       </div>
     </div>
   </section>
-
-  <!-- My Data Process: Scrollable Section -->
   <section id="process" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">My Data Process</h2>
@@ -948,8 +964,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Stats Section -->
   <section id="stats" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">My Impact</h2>
@@ -969,8 +983,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Skills Section: Scrollable Section -->
   <section id="skills" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">My Skills</h2>
@@ -1024,13 +1036,12 @@
       </div>
     </div>
   </section>
-
-  <!-- Projects Section: Scrollable Section -->
   <section id="projects" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">Highlighted Projects</h2>
-      <div class="featured-project mb-4">
+      <div class="featured-project bitcoin mb-4">
         <img src="images/projects/bitcoin price prediction.png" alt="Featured Project: Bitcoin Price Prediction Using Machine Learning in Python" />
+        <canvas id="bitcoinCanvas"></canvas>
       </div>
       <div id="projectsCarousel" class="projects-section">
         <div class="scroll-content">
@@ -1047,7 +1058,7 @@
                   <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Personal Portfolio Website" data-description="Developed this fully responsive, recruiter-friendly portfolio website showcasing my data analytics projects, skills, articles, and testimonials using Bootstrap and modern web technologies." data-image="images/projects/my portfolio website.png" data-code="https://github.com/anuradha-menon/portfolio-website" data-blog="https://medium.com/@anuradhamenon_76458/portfolio-website" data-website="https://anuradhamenon.github.io">Preview</button>
                   <a href="https://github.com/anuradha-menon/portfolio-website" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon_76458/portfolio-website" target="_blank" class="btn">View Blog</a>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1111,7 +1122,7 @@
                   Analyzed 7 datasets for sentiment analysis, data cleaning; built Excel dashboards and presented via PowerPoint & video.
                 </p>
                 <div class="project-tabs">
-                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Accenture Data Analytics Simulation" data-description="Analyzed 7 datasets for sentiment analysis, data cleaning; built Excel dashboards and presented via PowerPoint & video." data-image="images/projects/accenture forage certificate.png" data-code="https://github.com/anuradha-menon/accenture-simulation" data-blog="https://medium.com/@anuradhamenon_76458/accenture-simulation">Preview</button>
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Accenture Data Analytics Simulation" data-description="Analyzed 7 datasets for sentiment analysis, data cleaning; built Excel dashboards and presented via PowerPoint & video." data-image="images/projects/accenture forage certificate.png" data-code="https://github.com/anuradha-menon/accenture-simulation" data-blog="https://medium.com/@anuradhamenon/accenture-simulation">Preview</button>
                   <a href="https://github.com/anuradha-menon/accenture-simulation" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon/accenture-simulation" target="_blank" class="btn">View Blog</a>
                 </div>
@@ -1216,14 +1227,14 @@
           </div>
           <div class="project-card" style="--card-index: 12;">
             <div class="card h-100 shadow-sm">
-              <img src="images/projects/customer-segmentation.png" class="card-img-top" alt="Fake News Detection Model Using Tensorflow" />
+              <img src="images/projects/customer-segmentation.png" class="card-img-top" alt="Customer Segmentation Analysis" />
               <div class="card-body">
                 <h6 class="font-weight-bold">Customer Segmentation Analysis</h6>
                 <p class="card-text small">
                   Applied clustering techniques to segment customers, optimizing marketing strategies.
                 </p>
                 <div class="project-tabs">
-                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Fake News Detection Model Using Tensorflow" data-description="Applied clustering techniques to segment customers, optimizing marketing strategies." data-image="images/projects/customer-segmentation.png" data-code="https://github.com/anuradha-menon/customer-segmentation" data-blog="https://medium.com/@anuradhamenon_76458/customer-segmentation">Preview</button>
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Customer Segmentation Analysis" data-description="Applied clustering techniques to segment customers, optimizing marketing strategies." data-image="images/projects/customer-segmentation.png" data-code="https://github.com/anuradha-menon/customer-segmentation" data-blog="https://medium.com/@anuradhamenon_76458/customer-segmentation">Preview</button>
                   <a href="https://github.com/anuradha-menon/customer-segmentation" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon_76458/customer-segmentation" target="_blank" class="btn">View Blog</a>
                 </div>
@@ -1232,14 +1243,14 @@
           </div>
           <div class="project-card" style="--card-index: 13;">
             <div class="card h-100 shadow-sm">
-              <img src="images/projects/predictive-maintenance.png" class="card-img-top" alt="Heart Disease Prediction Using Logistic Regression" />
+              <img src="images/projects/predictive-maintenance.png" class="card-img-top" alt="Predictive Maintenance Dashboard" />
               <div class="card-body">
                 <h6 class="font-weight-bold">Predictive Maintenance Dashboard</h6>
                 <p class="card-text small">
                   Developed a dashboard for predictive maintenance using time-series analysis.
                 </p>
                 <div class="project-tabs">
-                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Heart Disease Prediction Using Logistic Regression" data-description="Developed a dashboard for predictive maintenance using time-series analysis." data-image="images/projects/predictive-maintenance.png" data-code="https://github.com/anuradha-menon/predictive-maintenance" data-blog="https://medium.com/@anuradhamenon_76458/predictive-maintenance">Preview</button>
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Predictive Maintenance Dashboard" data-description="Developed a dashboard for predictive maintenance using time-series analysis." data-image="images/projects/predictive-maintenance.png" data-code="https://github.com/anuradha-menon/predictive-maintenance" data-blog="https://medium.com/@anuradhamenon_76458/predictive-maintenance">Preview</button>
                   <a href="https://github.com/anuradha-menon/predictive-maintenance" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon_76458/predictive-maintenance" target="_blank" class="btn">View Blog</a>
                 </div>
@@ -1250,8 +1261,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Certifications Section: Scrollable Section -->
   <section id="certifications" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">Certifications</h2>
@@ -1259,7 +1268,7 @@
         <div class="scroll-content">
           <div class="certification-card" style="--card-index: 1;">
             <div class="card h-100 shadow-sm">
-              <img src="images/certifications/certificate1.jpg" class="card-img-top" alt="Data Analytics Mster Course Certification" />
+              <img src="images/certifications/certificate1.jpg" class="card-img-top" alt="Data Analytics Master Course Certification" />
               <div class="card-body">
                 <h6 class="font-weight-bold">Data Analytics Master Course Certification</h6>
                 <p class="card-text small">
@@ -1317,8 +1326,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Upwork Availability Section -->
   <section id="availability" class="availability-section animate-on-scroll">
     <h2>Available for Freelance & Contract Work</h2>
     <p>
@@ -1330,8 +1337,6 @@
       </a>
     </p>
   </section>
-
-  <!-- Articles Section: Scrollable Section -->
   <section id="articles" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">Featured Articles & Thought Leadership</h2>
@@ -1416,8 +1421,6 @@
       </div>
     </div>
   </section>
-
-   <!-- Testimonials Section: Scrollable Section -->
   <section id="testimonials" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">Testimonials</h2>
@@ -1442,14 +1445,13 @@
             <div>
               <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
               <span class="d-block my-3">
-                Her analytics and clear data storytelling helped us optimize our aviation planning and boosted our team's confidence in analytics initiatives.
-              </span>
+                Her analytics and clear data storytelling helped us optimize our supply chain operations, reducing costs significantly.</span>
             </div>
             <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client2.jpg" alt="Michael Tan" />
+              <img src="images/testimonial2.png" alt="John Doe" />
               <div>
-                <strong>Michael Tan</strong><br />
-                Ops Manager, SkyAirways
+                <strong>John Doe</strong><br />
+                Operations Manager, TransLogistics Inc.
               </div>
             </div>
           </div>
@@ -1457,89 +1459,14 @@
             <div>
               <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
               <span class="d-block my-3">
-                Professional, timely, and insightful — Anuradha’s work empowered our team to better use data for decision-making.
+                Anuradha’s expertise in ESG research provided us with a clear roadmap to align with global sustainability standards.
               </span>
             </div>
             <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client3.jpg" alt="Rohit Mehta" />
+              <img src="images/testimonial3.png" alt="Sarah Smith" />
               <div>
-                <strong>Rohit Mehta</strong><br />
-                Project Manager, DataBridge Analytics
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 4;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Anuradha’s expertise in ESG analytics allowed our company to significantly improve reporting and stakeholder engagement.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client4.jpg" alt="Sarah Lee" />
-              <div>
-                <strong>Sarah Lee</strong><br />
-                ESG Consultant, GreenFuture Inc.
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 5;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Anuradha's data models have transformed our business decisions with precision and insight.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client5.jpg" alt="John Doe" />
-              <div>
-                <strong>John Doe</strong><br />
-                CEO, TechCorp
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 6;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Outstanding ESG analysis; highly recommend for any sustainability project.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client6.jpg" alt="Jane Smith" />
-              <div>
-                <strong>Jane Smith</strong><br />
-                Director, EcoSolutions
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 7;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Her visualizations are clear, insightful, and always on point.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client7.jpg" alt="Alex Johnson" />
-              <div>
-                <strong>Alex Johnson</strong><br />
-                Analyst, DataFirm
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 8;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Reliable and innovative data analyst who delivers results every time.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonials/client8.jpg" alt="Emily Davis" />
-              <div>
-                <strong>Emily Davis</strong><br />
-                Manager, Innovate Inc.
+                <strong>Sarah Smith</strong><br />
+                ESG Consultant, EcoSolutions Ltd.
               </div>
             </div>
           </div>
@@ -1547,197 +1474,238 @@
       </div>
     </div>
   </section>
-
-  <!-- Contact Section -->
   <section id="contact" class="section-pad animate-on-scroll">
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
-      <p class="text-center">
-        Interested in collaborating? Reach out to discuss data analytics, ESG research, or freelance opportunities.
-      </p>
-      <div class="text-center mt-4">
-        <a href="mailto:anuradhamenon@gmail.com" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;">Email Me</a>
-        <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;">Hire Me on Upwork</a>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required />
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <button type="submit" class="btn" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); color: #1C2526;">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 Anuradha Menon. All rights reserved.</p>
-    <div class="social-group">
-      <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
-        <img src="icons/github.png" alt="GitHub" />
-      </a>
-      <a href="https://linkedin.com/in/anuradha-n-menon" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
-        <img src="icons/linkedin.png" alt="LinkedIn" />
-      </a>
-      <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
-        <img src="icons/medium.png" alt="Medium" />
-      </a>
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
-        <img src="icons/upwork.png" alt="Upwork" />
-      </a>
-    </div>
-  </div>
-</footer>
-
-<!-- Modal for Project Details -->
-<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="" class="project-image" alt="Project Image" />
-        <p class="project-description"></p>
-      </div>
-      <div class="modal-footer">
-        <a href="#" class="btn project-code-link" target="_blank">View Code</a>
-        <a href="#" class="btn project-blog-link" target="_blank">View Blog</a>
-        <a href="#" class="btn project-website-link" target="_blank">Visit Website</a>
-        <button type="button" class="btn" data-dismiss="modal">Close</button>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Anuradha Menon. All rights reserved.</p>
+      <div class="social-group">
+        <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
+          <img src="icons/github.png" alt="GitHub" />
+        </a>
+        <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
+          <img src="icons/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
+          <img src="icons/medium.png" alt="Medium" />
+        </a>
+        <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
+          <img src="icons/upwork.png" alt="Upwork" />
+        </a>
       </div>
     </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="Project Image" class="img-fluid" />
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" target="_blank" class="btn view-code">View Code</a>
+          <a href="#" target="_blank" class="btn view-blog">View Blog</a>
+          <a href="#" target="_blank" class="btn view-website">View Website</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Custom JavaScript -->
-<script>
-  // Scroll Animation for elements with animate-on-scroll class
-  document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    elements.forEach(element => observer.observe(element));
-  });
-
-  // Navbar shrink on scroll
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+  <!-- Bootstrap 4 JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    // Scroll animations
+    function handleScrollAnimations() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      elements.forEach((el) => observer.observe(el));
     }
-  });
 
-  // Counter Animation for Stats Section
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200; // Animation speed
-
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 10);
+    // Navbar scroll effect
+    function handleNavbarScroll() {
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
         } else {
-          counter.innerText = target;
+          navbar.classList.remove('scrolled');
         }
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          updateCount();
-          observer.unobserve(counter);
-        }
-      }, { threshold: 0.5 });
-
-      observer.observe(counter);
-    });
-  };
-
-  // Trigger counter animation when stats section is visible
-  document.addEventListener('DOMContentLoaded', () => {
-    const statsSection = document.querySelector('#stats');
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateCounters();
-        observer.unobserve(statsSection);
-      }
-    }, { threshold: 0.5 });
-    observer.observe(statsSection);
-  });
-
-  // Modal Content Update
-  $('#projectModal').on('show.bs.modal', function (event) {
-    const button = $(event.relatedTarget);
-    const title = button.data('title');
-    const description = button.data('description');
-    const image = button.data('image');
-    const code = button.data('code');
-    const blog = button.data('blog');
-    const website = button.data('website');
-
-    const modal = $(this);
-    modal.find('.modal-title').text(title);
-    modal.find('.project-image').attr('src', image).attr('alt', title);
-    modal.find('.project-description').text(description);
-    modal.find('.project-code-link').attr('href', code);
-    modal.find('.project-blog-link').attr('href', blog);
-    modal.find('.project-website-link').attr('href', website);
-
-    // Hide website link if not provided
-    if (!website) {
-      modal.find('.project-website-link').hide();
-    } else {
-      modal.find('.project-website-link').show();
-    }
-  });
-
-  // Smooth Scroll for Navbar Links
-  document.querySelectorAll('.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      window.scrollTo({
-        top: targetElement.offsetTop - 70,
-        behavior: 'smooth'
       });
+    }
 
-      // Update active nav link
-      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-
-  // Highlight active section in navbar on scroll
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + 100;
-    document.querySelectorAll('section').forEach(section => {
-      if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === section.id) {
-            link.classList.add('active');
+    // Counter animation for stats
+    function handleCounterAnimation() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach((counter) => {
+        counter.innerText = '0';
+        const updateCounter = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / 200;
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCounter, 10);
+          } else {
+            counter.innerText = target;
           }
-        });
-      }
+        };
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              updateCounter();
+            }
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(counter);
+      });
+    }
+
+    // Modal data population
+    $('#projectModal').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const title = button.data('title');
+      const description = button.data('description');
+      const image = button.data('image');
+      const code = button.data('code');
+      const blog = button.data('blog');
+      const website = button.data('website');
+      const modal = $(this);
+      modal.find('.modal-title').text(title);
+      modal.find('.modal-body img').attr('src', image);
+      modal.find('.modal-body p').text(description);
+      modal.find('.view-code').attr('href', code);
+      modal.find('.view-blog').attr('href', blog);
+      modal.find('.view-website').attr('href', website).toggle(website !== undefined);
     });
-  });
-</script>
+
+    // Form validation
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Bitcoin canvas animation
+    function handleBitcoinAnimation() {
+      const canvas = document.getElementById('bitcoinCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+
+      const particlesArray = [];
+      const numberOfParticles = 50;
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 5 + 1;
+          this.speedX = Math.random() * 3 - 1.5;
+          this.speedY = Math.random() * 3 - 1.5;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.size > 0.2) this.size -= 0.1;
+        }
+        draw() {
+          ctx.fillStyle = 'rgba(244, 162, 97, 0.8)';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        for (let i = 0; i < numberOfParticles; i++) {
+          particlesArray.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+          particlesArray[i].update();
+          particlesArray[i].draw();
+          if (particlesArray[i].size <= 0.2) {
+            particlesArray.splice(i, 1);
+            i--;
+            particlesArray.push(new Particle());
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      init();
+      animate();
+
+      window.addEventListener('resize', () => {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+      });
+    }
+
+    // Initialize all functions on load
+    document.addEventListener('DOMContentLoaded', () => {
+      handleScrollAnimations();
+      handleNavbarScroll();
+      handleCounterAnimation();
+      handleBitcoinAnimation();
+    });
+  </script>
 </body>
 </html>
