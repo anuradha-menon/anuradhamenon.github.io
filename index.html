@@ -852,6 +852,152 @@
         padding: 8px 15px;
         max-width: 90%;
       }
+      /* New Mobile Fixes */
+      .scroll-container,
+      .projects-section,
+      .articles-section,
+      .testimonials-section,
+      .certifications-section,
+      .skills-section {
+        overflow-x: hidden !important;
+        white-space: normal !important;
+        padding: 1rem;
+        flex-direction: column;
+      }
+      .scroll-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        width: 100% !important;
+        min-width: auto !important;
+      }
+      .step-container {
+        width: 100% !important;
+        max-width: 300px;
+        min-width: auto !important;
+        margin: 1rem 0 !important;
+        text-align: left;
+      }
+      .step-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+      .scroll-container .scroll-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .stats-card {
+        width: 100% !important;
+        max-width: 280px;
+        margin: 0.5rem auto !important;
+      }
+      .skill-meter {
+        width: 160px !important;
+        height: 160px !important;
+        margin: 1rem !important;
+      }
+      .skill-meter p {
+        font-size: 0.8rem;
+        max-width: 140px;
+        line-height: 1.2;
+        white-space: normal;
+      }
+      .progress-circle {
+        transform: none;
+      }
+      .project-card,
+      .certification-card,
+      .article-card {
+        width: 100% !important;
+        min-width: auto !important;
+        max-width: 350px;
+        min-height: auto !important;
+        margin: 1rem 0 !important;
+      }
+      .card-img-top {
+        height: 180px !important;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 1rem;
+      }
+      .project-tabs,
+      .certification-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .project-tabs .btn,
+      .certification-tabs .btn {
+        width: 100%;
+        margin: 0;
+      }
+      .testimonial-card {
+        width: 100% !important;
+        min-width: auto !important;
+        max-width: 320px;
+        min-height: auto !important;
+        margin: 1rem 0 !important;
+        padding: 1.5rem;
+      }
+      .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+      }
+      .testimonial-author img {
+        margin: 0 0 1rem 0;
+        width: 60px;
+        height: 60px;
+      }
+      .profile-img-container {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+      .profile-img-container img {
+        height: 280px;
+        object-fit: cover;
+      }
+      .jumbotron {
+        padding: 3rem 1rem 2rem !important;
+        margin-top: 60px;
+      }
+      .title-parts {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+        line-height: 1.4;
+        text-align: center;
+      }
+      .mouse {
+        width: 32px;
+        height: 54px;
+      }
+      .mouse::before {
+        width: 26px;
+        height: 48px;
+      }
+      .mouse::after {
+        width: 6px;
+        height: 6px;
+      }
+      #contactForm .form-control {
+        font-size: 1rem;
+      }
+      .featured-project.bitcoin canvas {
+        display: none;
+      }
+      body {
+        overflow-x: hidden !important;
+      }
+    }
+    @media (min-width: 768px) {
+      .featured-project.bitcoin canvas {
+        display: block;
+      }
     }
     @media (prefers-reduced-motion: reduce) {
       .animate-on-scroll, .project-card, .stats-card, .testimonial-card, .article-card, .certification-card, .skill-meter, .featured-project, .modal-content, .nav-link, .step-container, .scroll-down, .mouse, .scroll-down p, .section-title, .title-parts, .title-parts span {
@@ -1431,447 +1577,465 @@
                   Certified in Python for data science, including libraries like Pandas, NumPy, and Scikit-learn for data analysis and machine learning.
                 </p>
                 <div class="certification-tabs">
-                  <a href="https://example.com/cert4" target="_blank" class="btn">View Certificate</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="availability" class="availability-section animate-on-scroll">
-    <h2>Available for Freelance & Contract Work</h2>
-    <p>
-      I am actively accepting new data analytics, ESG research, and dashboarding projects on Upwork.<br />
-      Whether starting your analytics journey or optimizing existing processes, I can deliver actionable insights.<br />
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 700;" class="availability-link">
-        View my Upwork profile here
-        <img src="icons/upwork.png" alt="Upwork" class="availability-icon" />
-      </a>
+  <a href="https://example.com/cert4" target="_blank" class="btn">View Certificate</a>
+</div>
+</div>
+</div>
+</div>
+<div class="certification-card" style="--card-index: 5;">
+<div class="card h-100 shadow-sm">
+  <img src="images/certifications/sql-cert.png" class="card-img-top" alt="Advanced SQL for Data Analysis" />
+  <div class="card-body">
+    <h6 class="font-weight-bold">Advanced SQL for Data Analysis</h6>
+    <p class="card-text small">
+      Mastered complex SQL queries, database design, and optimization for large-scale data analysis.
     </p>
-  </section>
-  <section id="articles" class="section-pad animate-on-scroll">
-      <div class="container">
-        <h2 class="section-title">Featured Articles & Thought Leadership</h2>
-        <div id="articlesCarousel" class="articles-section">
-          <div class="scroll-content">
-            <div class="article-card" style="--card-index: 1;">
-              <div class="card h-100">
-                <img src="images/articles/GRI.png" class="card-img-top" alt="Understanding the Global Reporting Initiative" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
-                  <p class="card-text small">
-                    Comprehensive guide on the world's most widely used sustainability reporting framework.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-            <div class="article-card" style="--card-index: 2;">
-              <div class="card h-100">
-                <img src="images/articles/ESG research.png" class="card-img-top" alt="The Impact of ESG Disclosure on Firm Value" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
-                  <p class="card-text small">
-                    Exploring how ESG practices affect company financial performance and market value.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-            <div class="article-card" style="--card-index: 3;">
-              <div class="card h-100">
-                <img src="images/articles/value chain.png" class="card-img-top" alt="The Corporate Value Chain" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
-                  <p class="card-text small">
-                    A deep dive into Scope 3 emissions and the best practices in GHG reporting.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-            <div class="article-card" style="--card-index: 4;">
-              <div class="card h-100">
-                <img src="images/articles/lca.png" alt="Driving Sustainability" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
-                  <p class="card-text small">
-                    How companies use GHG LCA for environmental responsibility and sustainability strategies.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-            <div class="article-card" style="--card-index: 5;">
-              <div class="card h-100">
-                <img src="images/articles/mitigation goal.png" class="card-img-top" alt="Mitigation Goal" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">Mitigation Goal: Allowable Emissions</h6>
-                  <p class="card-text small">
-                    A quiz to test understanding of emissions limits in sustainability frameworks.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-            <div class="article-card" style="--card-index: 6;">
-              <div class="card h-100">
-                <img src="images/articles/fab india.png" class="card-img-top" alt="FabIndia: Tradition with Sustainability" />
-                <div class="card-body">
-                  <h6 class="font-weight-bold">FabIndia: Tradition with Sustainability</h6>
-                  <p class="card-text small">
-                    Analysis of FabIndia’s integration of ESG into business operations for sustainable growth.
-                  </p>
-                  <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="certification-tabs">
+      <a href="https://example.com/cert5" target="_blank" class="btn">View Certificate</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="availability" class="availability-section animate-on-scroll">
+<h2>Available for Freelance & Contract Work</h2>
+<p>
+  I am actively accepting new data analytics, ESG research, and dashboarding projects on Upwork.<br />
+  Whether starting your analytics journey or optimizing existing processes, I can deliver actionable insights.<br />
+  <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 700;" class="availability-link">
+    View my Upwork profile here
+    <img src="icons/upwork.png" alt="Upwork" class="availability-icon" />
+  </a>
+</p>
+</section>
+<section id="articles" class="section-pad animate-on-scroll">
+<div class="container">
+<h2 class="section-title">Featured Articles & Thought Leadership</h2>
+<div id="articlesCarousel" class="articles-section">
+  <div class="scroll-content">
+    <div class="article-card" style="--card-index: 1;">
+      <div class="card h-100">
+        <img src="images/articles/GRI.png" class="card-img-top" alt="Understanding the Global Reporting Initiative" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
+          <p class="card-text small">
+            Comprehensive guide on the world's most widely used sustainability reporting framework.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
         </div>
-        <div class="text-center mt-4">
-          <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-sm" style="background: linear-gradient(135deg, #28A745, #218838); border: none; color: #FFFFFF;" target="_blank">More Articles on Medium</a>
-        </div>
-      </div>
-    </section>
-  <section id="testimonials" class="section-pad animate-on-scroll">
-      <div class="container">
-        <h2 class="section-title">Testimonials</h2>
-        <div id="testimonialsCarousel" class="testimonials-section">
-          <div class="scroll-content">
-            <div class="testimonial-card" style="--card-index: 1;">
-              <p class="small">
-                "Anuradha’s data analytics transformed our sustainability reporting. Her dashboards were insightful and actionable."
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client1.png" alt="Client 1" />
-                <div>
-                  <strong>Jane Doe</strong><br />
-                  <small>Sustainability Manager, GreenCorp</small>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card" style="--card-index: 2;">
-              <p class="small">
-                "Her ability to translate complex data into clear strategies is unmatched. Highly recommend!"
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client2.png" alt="Client 2" />
-                <div>
-                  <strong>John Smith</strong><br />
-                  <small>Data Lead, TechSolutions</small>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card" style="--card-index: 3;">
-              <p class="small">
-                "Anuradha’s ESG expertise helped us align with global standards. Exceptional work!"
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client3.png" alt="Client 3" />
-                <div>
-                  <strong>Emily Brown</strong><br />
-                  <small>CEO, EcoInnovate</small>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card" style="--card-index: 4;">
-              <p class="small">
-                "Anuradha’s work on our sales forecasting model was precise and impactful. A true professional!"
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client4.png" alt="Client 4" />
-                <div>
-                  <strong>Michael Chen</strong><br />
-                  <small>Head of Operations, RetailPlus</small>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card" style="--card-index: 5;">
-              <p class="small">
-                "Her visualizations made our data accessible and actionable. Outstanding collaboration!"
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client5.png" alt="Client 5" />
-                <div>
-                  <strong>Sophia Patel</strong><br />
-                  <small>Marketing Director, GrowthWave</small>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card" style="--card-index: 6;">
-              <p class="small">
-                "Anuradha’s attention to detail and analytical skills elevated our project outcomes significantly."
-              </p>
-              <div class="testimonial-author">
-                <img src="images/testimonials/client6.png" alt="Client 6" />
-                <div>
-                  <strong>David Kim</strong><br />
-                  <small>CTO, Innovatech</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <section id="contact" class="section-pad animate-on-scroll">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <form id="contactForm" class="mx-auto" style="max-width: 600px;">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn" style="background: linear-gradient(135deg, #28A745, #218838); color: #FFFFFF;">Send Message</button>
-        </form>
-      </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Anuradha Menon. All rights reserved.</p>
-      <div class="social-group">
-        <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
-          <img src="icons/github.png" alt="GitHub" />
-        </a>
-        <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
-          <img src="icons/linkedin.png" alt="LinkedIn" />
-        </a>
-        <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
-          <img src="icons/medium.png" alt="Medium" />
-        </a>
-        <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
-          <img src="icons/upwork.png" alt="Upwork" />
-        </a>
       </div>
     </div>
-  </footer>
-  <!-- Modal for Project Details -->
-  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="projectModalLabel"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="article-card" style="--card-index: 2;">
+      <div class="card h-100">
+        <img src="images/articles/ESG research.png" class="card-img-top" alt="The Impact of ESG Disclosure on Firm Value" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
+          <p class="card-text small">
+            Exploring how ESG practices affect company financial performance and market value.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
         </div>
-        <div class="modal-body">
-          <img id="modalImage" src="" alt="Project Image" class="img-fluid" />
-          <p id="modalDescription"></p>
+      </div>
+    </div>
+    <div class="article-card" style="--card-index: 3;">
+      <div class="card h-100">
+        <img src="images/articles/value chain.png" class="card-img-top" alt="The Corporate Value Chain" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
+          <p class="card-text small">
+            A deep dive into Scope 3 emissions and the best practices in GHG reporting.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
         </div>
-        <div class="modal-footer">
-          <a id="modalCodeLink" href="#" target="_blank" class="btn">View Code</a>
-          <a id="modalBlogLink" href="#" target="_blank" class="btn">View Blog</a>
-          <a id="modalWebsiteLink" href="#" target="_blank" class="btn">Visit Website</a>
+      </div>
+    </div>
+    <div class="article-card" style="--card-index: 4;">
+      <div class="card h-100">
+        <img src="images/articles/lca.png" alt="Driving Sustainability" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
+          <p class="card-text small">
+            How companies use GHG LCA for environmental responsibility and sustainability strategies.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+        </div>
+      </div>
+    </div>
+    <div class="article-card" style="--card-index: 5;">
+      <div class="card h-100">
+        <img src="images/articles/mitigation goal.png" class="card-img-top" alt="Mitigation Goal" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">Mitigation Goal: Allowable Emissions</h6>
+          <p class="card-text small">
+            A quiz to test understanding of emissions limits in sustainability frameworks.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+        </div>
+      </div>
+    </div>
+    <div class="article-card" style="--card-index: 6;">
+      <div class="card h-100">
+        <img src="images/articles/fab india.png" class="card-img-top" alt="FabIndia: Tradition with Sustainability" />
+        <div class="card-body">
+          <h6 class="font-weight-bold">FabIndia: Tradition with Sustainability</h6>
+          <p class="card-text small">
+            Analysis of FabIndia's integration of ESG into business operations for sustainable growth.
+          </p>
+          <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
         </div>
       </div>
     </div>
   </div>
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-  <script>
-    // GSAP Animations
-    gsap.registerPlugin(ScrollTrigger);
+</div>
+<div class="text-center mt-4">
+  <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-sm" style="background: linear-gradient(135deg, #28A745, #218838); border: none; color: #FFFFFF;" target="_blank">More Articles on Medium</a>
+</div>
+</div>
+</section>
+<section id="testimonials" class="section-pad animate-on-scroll">
+<div class="container">
+<h2 class="section-title">Testimonials</h2>
+<div id="testimonialsCarousel" class="testimonials-section">
+  <div class="scroll-content">
+    <div class="testimonial-card" style="--card-index: 1;">
+      <p class="small">
+        "Anuradha's data analytics transformed our sustainability reporting. Her dashboards were insightful and actionable."
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client1.png" alt="Client 1" />
+        <div>
+          <strong>Jane Doe</strong><br />
+          <small>Sustainability Manager, GreenCorp</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" style="--card-index: 2;">
+      <p class="small">
+        "Her ability to translate complex data into clear strategies is unmatched. Highly recommend!"
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client2.png" alt="Client 2" />
+        <div>
+          <strong>John Smith</strong><br />
+          <small>Data Lead, TechSolutions</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" style="--card-index: 3;">
+      <p class="small">
+        "Anuradha's ESG expertise helped us align with global standards. Exceptional work!"
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client3.png" alt="Client 3" />
+        <div>
+          <strong>Emily Brown</strong><br />
+          <small>CEO, EcoInnovate</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" style="--card-index: 4;">
+      <p class="small">
+        "Anuradha's work on our sales forecasting model was precise and impactful. A true professional!"
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client4.png" alt="Client 4" />
+        <div>
+          <strong>Michael Chen</strong><br />
+          <small>Head of Operations, RetailPlus</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" style="--card-index: 5;">
+      <p class="small">
+        "Her visualizations made our data accessible and actionable. Outstanding collaboration!"
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client5.png" alt="Client 5" />
+        <div>
+          <strong>Sophia Patel</strong><br />
+          <small>Marketing Director, GrowthWave</small>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card" style="--card-index: 6;">
+      <p class="small">
+        "Anuradha's attention to detail and analytical skills elevated our project outcomes significantly."
+      </p>
+      <div class="testimonial-author">
+        <img src="images/testimonials/client6.png" alt="Client 6" />
+        <div>
+          <strong>David Kim</strong><br />
+          <small>CTO, Innovatech</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="contact" class="section-pad animate-on-scroll">
+<div class="container">
+<h2 class="section-title">Get in Touch</h2>
+<form id="contactForm" class="mx-auto" style="max-width: 600px;">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Your Name" required />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Your Email" required />
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn" style="background: linear-gradient(135deg, #28A745, #218838); color: #FFFFFF;">Send Message</button>
+</form>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<p>&copy; 2025 Anuradha Menon. All rights reserved.</p>
+<div class="social-group">
+  <a href="https://github.com/anuradha-menon" target="_blank" class="icon-link" title="GitHub" aria-label="Visit Anuradha's GitHub profile">
+    <img src="icons/github.png" alt="GitHub" />
+  </a>
+  <a href="https://linkedin.com/in/anuradha-n-menon/" target="_blank" class="icon-link" title="LinkedIn" aria-label="Visit Anuradha's LinkedIn profile">
+    <img src="icons/linkedin.png" alt="LinkedIn" />
+  </a>
+  <a href="https://medium.com/@anuradhamenon_76458" target="_blank" class="icon-link" title="Medium" aria-label="Visit Anuradha's Medium profile">
+    <img src="icons/medium.png" alt="Medium" />
+  </a>
+  <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" class="icon-link" title="Upwork" aria-label="Visit Anuradha's Upwork profile">
+    <img src="icons/upwork.png" alt="Upwork" />
+  </a>
+</div>
+</div>
+</footer>
+<!-- Modal for Project Details -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="projectModalLabel"></h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img id="modalImage" src="" alt="Project Image" class="img-fluid" />
+    <p id="modalDescription"></p>
+  </div>
+  <div class="modal-footer">
+    <a id="modalCodeLink" href="#" target="_blank" class="btn">View Code</a>
+    <a id="modalBlogLink" href="#" target="_blank" class="btn">View Blog</a>
+    <a id="modalWebsiteLink" href="#" target="_blank" class="btn">Visit Website</a>
+  </div>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script>
+  // GSAP Animations
+  gsap.registerPlugin(ScrollTrigger);
 
-    // Animate section titles with enhanced effect
-    gsap.utils.toArray('.section-title').forEach((title, index) => {
-      gsap.fromTo(
-        title,
-        { opacity: 0, y: 50, scale: 0.95, rotation: -2 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1.05,
-          rotation: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: title,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-          delay: index * 0.2,
-        }
-      );
-    });
-
-    // Animate on-scroll elements
-    gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
-      gsap.fromTo(
-        element,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    });
-
-    // Animate profile image
-    gsap.from('.profile-img-container img', {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      ease: 'power2.out',
-    });
-
-    // Animate title parts with enhanced bounce effect and fallback
+  // Animate section titles with enhanced effect
+  gsap.utils.toArray('.section-title').forEach((title, index) => {
     gsap.fromTo(
-      '.title-parts span',
-      { opacity: 0, y: 20, scale: 0.9 },
+      title,
+      { opacity: 0, y: 50, scale: 0.95, rotation: -2 },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
+        scale: 1.05,
+        rotation: 0,
         duration: 0.8,
-        stagger: 0.2,
-        ease: 'back.out(1.7)',
-        delay: 0.5,
-        onComplete: () => {
-          document.querySelectorAll('.title-parts span').forEach(span => {
-            span.style.opacity = '1';
-            span.style.transform = 'translateY(0) scale(1)';
-            span.style.visibility = 'visible';
-          });
-        }
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: title,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+        delay: index * 0.2,
       }
     );
+  });
 
-    // Fallback for title visibility after 1.5 seconds
-    setTimeout(() => {
-      document.querySelectorAll('.title-parts span').forEach(span => {
-        span.style.opacity = '1';
-        span.style.transform = 'translateY(0) scale(1)';
-        span.style.visibility = 'visible';
-      });
-      document.querySelector('.title-parts').style.opacity = '1';
-      document.querySelector('.title-parts').style.visibility = 'visible';
-    }, 1500);
+  // Animate on-scroll elements
+  gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  });
 
-    // Animate social icons
-    gsap.from('.icon-link img', {
-      opacity: 0,
-      scale: 0.8,
-      duration: 0.5,
-      stagger: 0.1,
+  // Animate profile image
+  gsap.from('.profile-img-container img', {
+    opacity: 0,
+    scale: 0.9,
+    duration: 1,
+    ease: 'power2.out',
+  });
+
+  // Animate title parts with enhanced bounce effect and fallback
+  gsap.fromTo(
+    '.title-parts span',
+    { opacity: 0, y: 20, scale: 0.9 },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
       ease: 'back.out(1.7)',
-    });
+      delay: 0.5,
+      onComplete: () => {
+        document.querySelectorAll('.title-parts span').forEach(span => {
+          span.style.opacity = '1';
+          span.style.transform = 'translateY(0) scale(1)';
+          span.style.visibility = 'visible';
+        });
+      }
+    }
+  );
 
-    // Animate stats counters
-    gsap.utils.toArray('.counter').forEach((counter) => {
+  // Fallback for title visibility after 1.5 seconds
+  setTimeout(() => {
+    document.querySelectorAll('.title-parts span').forEach(span => {
+      span.style.opacity = '1';
+      span.style.transform = 'translateY(0) scale(1)';
+      span.style.visibility = 'visible';
+    });
+    document.querySelector('.title-parts').style.opacity = '1';
+    document.querySelector('.title-parts').style.visibility = 'visible';
+  }, 1500);
+
+  // Animate social icons
+  gsap.from('.icon-link img', {
+    opacity: 0,
+    scale: 0.8,
+    duration: 0.5,
+    stagger: 0.1,
+    ease: 'back.out(1.7)',
+  });
+
+  // Animate stats counters
+  gsap.utils.toArray('.counter').forEach((counter) => {
+    gsap.fromTo(
+      counter,
+      { innerText: 0 },
+      {
+        innerText: counter.getAttribute('data-target'),
+        duration: 2,
+        ease: 'power1.out',
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: counter,
+          start: 'top 80%',
+        },
+      }
+    );
+  });
+
+  // Animate skill progress bars
+  gsap.utils.toArray('.skill-meter').forEach((meter, index) => {
+    const percentageText = meter.querySelector('p').textContent.match(/(\d+)%/);
+    if (percentageText) {
+      const percentage = parseInt(percentageText[1]);
+      const circle = meter.querySelector('.progress-bar');
+      const circumference = 2 * Math.PI * 90; // r=90 from SVG
+      const offset = circumference - (percentage / 100) * circumference;
       gsap.fromTo(
-        counter,
-        { innerText: 0 },
+        circle,
+        { strokeDashoffset: circumference },
         {
-          innerText: counter.getAttribute('data-target'),
-          duration: 2,
-          ease: 'power1.out',
-          snap: { innerText: 1 },
+          strokeDashoffset: offset,
+          duration: 1.5,
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: counter,
+            trigger: meter,
             start: 'top 80%',
           },
+          delay: index * 0.1,
         }
       );
-    });
-
-    // Animate skill progress bars
-    gsap.utils.toArray('.skill-meter').forEach((meter, index) => {
-      const percentageText = meter.querySelector('p').textContent.match(/(\d+)%/);
-      if (percentageText) {
-        const percentage = parseInt(percentageText[1]);
-        const circle = meter.querySelector('.progress-bar');
-        const circumference = 2 * Math.PI * 90; // r=90 from SVG
-        const offset = circumference - (percentage / 100) * circumference;
-        gsap.fromTo(
-          circle,
-          { strokeDashoffset: circumference },
-          {
-            strokeDashoffset: offset,
-            duration: 1.5,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: meter,
-              start: 'top 80%',
-            },
-            delay: index * 0.1,
-          }
-        );
-      }
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Modal data population
-    $('#projectModal').on('show.bs.modal', function (event) {
-      const button = $(event.relatedTarget);
-      const title = button.data('title');
-      const description = button.data('description');
-      const image = button.data('image');
-      const code = button.data('code');
-      const blog = button.data('blog');
-      const website = button.data('website');
-      const modal = $(this);
-      modal.find('.modal-title').text(title);
-      modal.find('#modalDescription').text(description);
-      modal.find('#modalImage').attr('src', image);
-      modal.find('#modalCodeLink').attr('href', code);
-      modal.find('#modalBlogLink').attr('href', blog);
-      if (website) {
-        modal.find('#modalWebsiteLink').attr('href', website).show();
-      } else {
-        modal.find('#modalWebsiteLink').hide();
-      }
-    });
-
-    // Contact form submission (example)
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Form submitted! (This is a placeholder for actual form handling.)');
-      this.reset();
-    });
-
-    // Bitcoin canvas animation
-    const canvas = document.getElementById('bitcoinCanvas');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+  });
 
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Modal data population
+  $('#projectModal').on('show.bs.modal', function (event) {
+    const button = $(event.relatedTarget);
+    const title = button.data('title');
+    const description = button.data('description');
+    const image = button.data('image');
+    const code = button.data('code');
+    const blog = button.data('blog');
+    const website = button.data('website');
+    const modal = $(this);
+    modal.find('.modal-title').text(title);
+    modal.find('#modalDescription').text(description);
+    modal.find('#modalImage').attr('src', image);
+    modal.find('#modalCodeLink').attr('href', code);
+    modal.find('#modalBlogLink').attr('href', blog);
+    if (website) {
+      modal.find('#modalWebsiteLink').attr('href', website).show();
+    } else {
+      modal.find('#modalWebsiteLink').hide();
+    }
+  });
+
+  // Contact form submission (example)
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Form submitted! (This is a placeholder for actual form handling.)');
+    this.reset();
+  });
+
+  // Bitcoin canvas animation
+  const canvas = document.getElementById('bitcoinCanvas');
+  const ctx = canvas.getContext('2d');
+  let particlesArray = [];
+
+  function resizeCanvas() {
+    canvas.width = canvas.parentElement.offsetWidth;
+    canvas.height = canvas.parentElement.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Disable Bitcoin animation on mobile
+  if (window.innerWidth <= 767) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  } else {
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -1886,7 +2050,7 @@
         if (this.size > 0.2) this.size -= 0.1;
       }
       draw() {
-        ctx.fillStyle = 'rgba(40, 167, 69, 0.8)'; // Green color to match money-like theme
+        ctx.fillStyle = 'rgba(40, 167, 69, 0.8)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -1916,6 +2080,18 @@
 
     initParticles();
     animateParticles();
-  </script>
+  }
+
+  // Re-check on resize
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    if (window.innerWidth <= 767) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    } else if (particlesArray.length === 0) {
+      initParticles();
+      animateParticles();
+    }
+  });
+</script>
 </body>
 </html>
