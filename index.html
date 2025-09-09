@@ -14,7 +14,7 @@
     body {
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #1C2526;
-      color: #E4ECEE;
+      color: #FFFFFF;
       overflow-x: hidden;
       animation: fadeIn 1.2s ease-in;
     }
@@ -31,9 +31,9 @@
       to { opacity: 1; transform: scale(1) rotate(0); }
     }
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
-      50% { box-shadow: 0 0 20px 5px rgba(46, 196, 182, 0.6); }
-      100% { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.4); }
+      0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+      50% { box-shadow: 0 0 20px 5px rgba(40, 167, 69, 0.6); }
+      100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
     }
     @keyframes ripple {
       0% { transform: scale(0); opacity: 0.5; }
@@ -53,11 +53,13 @@
       60% { transform: translateY(-7px); }
     }
     @keyframes bitcoinGlow {
-      0% { box-shadow: 0 0 5px 0 #F4A261, 0 0 10px 0 #E76F51; }
-      50% { box-shadow: 0 0 20px 5px #F4A261, 0 0 30px 10px #E76F51; }
-      100% { box-shadow: 0 0 5px 0 #F4A261, 0 0 10px 0 #E76F51; }
+      0% { box-shadow: 0 0 5px 0 #28A745, 0 0 10px 0 #28A745; }
+      50% { box-shadow: 0 0 20px 5px #28A745, 0 0 30px 10px #28A745; }
+      100% { box-shadow: 0 0 5px 0 #28A745, 0 0 10px 0 #28A745; }
     }
     .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
     .animate-on-scroll.visible {
@@ -65,7 +67,7 @@
       transform: translateY(0);
     }
     .navbar {
-      background: linear-gradient(90deg, #163A3E, #2EC4B6);
+      background: #28A745;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
       padding: 1rem 2rem;
       transition: transform 0.3s ease;
@@ -74,13 +76,13 @@
       transform: scale(0.98);
     }
     .navbar-brand, .nav-link {
-      color: #E4ECEE !important;
+      color: #FFFFFF !important;
       font-weight: 600;
       transition: color 0.3s ease, transform 0.2s ease;
     }
     .nav-link:hover, .nav-link.active {
-      color: #CBF3F0 !important;
-      border-bottom: 2px solid #2EC4B6;
+      color: #FFFFFF !important;
+      border-bottom: 2px solid #FFFFFF;
       transform: scale(1.1);
       animation: glowPulse 1.5s infinite;
     }
@@ -90,7 +92,7 @@
       left: -9999px;
       z-index: 9999;
       padding: 10px;
-      background: #2EC4B6;
+      background: #28A745;
       color: #1C2526;
       font-weight: 600;
     }
@@ -99,19 +101,21 @@
       left: 10px;
     }
     .section-title {
-      color: #2EC4B6;
+      color: #28A745;
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: 0.01em;
       margin-bottom: 1.5rem;
       text-align: center;
       position: relative;
+      text-shadow: 0 0 8px rgba(40, 167, 69, 0.4);
+      opacity: 1;
     }
     .section-title::after {
       content: '';
       width: 120px;
       height: 5px;
-      background: #2EC4B6;
+      background: #28A745;
       display: block;
       margin: 0.75rem auto;
       animation: zoomIn 0.8s ease-out;
@@ -129,7 +133,7 @@
       box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: #2EC4B6 #3C4A4D;
+      scrollbar-color: #28A745 #3C4A4D;
     }
     .scroll-container::-webkit-scrollbar {
       height: 8px;
@@ -139,11 +143,11 @@
       border-radius: 4px;
     }
     .scroll-container::-webkit-scrollbar-thumb {
-      background: #2EC4B6;
+      background: #28A745;
       border-radius: 4px;
     }
     .scroll-container::-webkit-scrollbar-thumb:hover {
-      background: #1BA39C;
+      background: #218838;
     }
     .scroll-content {
       display: inline-block;
@@ -171,24 +175,24 @@
       justify-content: center;
       margin: 0 auto 12px;
       font-size: 2.8rem;
-      color: #2EC4B6;
+      color: #28A745;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .step-icon:hover {
       transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 4px 12px rgba(46, 196, 182, 0.4);
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
     }
     .step-label {
       text-transform: uppercase;
       font-size: 0.95rem;
       font-weight: 600;
-      color: #CBF3F0;
+      color: #FFFFFF;
       margin-bottom: 6px;
     }
     .step-text {
       max-width: 180px;
       font-size: 0.9rem;
-      color: #E4ECEE;
+      color: #FFFFFF;
       text-align: center;
       white-space: normal;
       margin: 0 auto;
@@ -202,7 +206,7 @@
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: #2EC4B6 #3C4A4D;
+      scrollbar-color: #28A745 #3C4A4D;
     }
     .projects-section::-webkit-scrollbar,
     .articles-section::-webkit-scrollbar,
@@ -224,7 +228,7 @@
     .testimonials-section::-webkit-scrollbar-thumb,
     .certifications-section::-webkit-scrollbar-thumb,
     .skills-section::-webkit-scrollbar-thumb {
-      background: #2EC4B6;
+      background: #28A745;
       border-radius: 4px;
     }
     .projects-section::-webkit-scrollbar-thumb:hover,
@@ -232,9 +236,9 @@
     .testimonials-section::-webkit-scrollbar-thumb:hover,
     .certifications-section::-webkit-scrollbar-thumb:hover,
     .skills-section::-webkit-scrollbar-thumb:hover {
-      background: #1BA39C;
+      background: #218838;
     }
-    .project-card, .article-card, .testimonial-card, .certification-card, .skill-card {
+    .project-card, .article-card, .testimonial-card, .certification-card {
       display: inline-block;
       vertical-align: top;
       width: 570px;
@@ -245,22 +249,22 @@
       min-height: 500px;
       perspective: 1000px;
     }
-    .project-card, .certification-card, .skill-card, .article-card {
+    .project-card, .certification-card, .article-card {
       animation: popIn 0.8s ease-out forwards;
       animation-delay: calc(var(--card-index) * 0.1s);
     }
-    .project-card:hover, .article-card:hover, .testimonial-card:hover, .certification-card:hover, .skill-card:hover {
+    .project-card:hover, .article-card:hover, .testimonial-card:hover, .certification-card:hover {
       transform: scale(1.05);
     }
-    .project-card .card, .article-card .card, .testimonial-card, .certification-card .card, .skill-card .card {
+    .project-card .card, .article-card .card, .testimonial-card, .certification-card .card {
       position: relative;
       transition: transform 0.3s ease;
     }
-    .project-card:hover .card, .article-card:hover .card, .testimonial-card:hover, .certification-card:hover .card, .skill-card:hover .card {
+    .project-card:hover .card, .article-card:hover .card, .testimonial-card:hover, .certification-card:hover .card {
       transform: rotateX(5deg) rotateY(5deg);
       box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
     }
-    .article-card:last-child, .project-card:last-child, .testimonial-card:last-child, .certification-card:last-child, .skill-card:last-child {
+    .article-card:last-child, .project-card:last-child, .testimonial-card:last-child, .certification-card:last-child {
       margin-right: 15px;
     }
     .testimonial-card {
@@ -338,12 +342,12 @@
     }
     .footer {
       background: #163A3E;
-      color: #E4ECEE;
+      color: #FFFFFF;
       padding: 2rem;
       text-align: center;
     }
     .availability-section {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
+      background: #28A745;
       color: #1C2526;
       border-radius: 20px;
       padding: 2.5rem;
@@ -355,18 +359,19 @@
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #1C2526;
+      color: #FFFFFF;
     }
     .availability-section p {
       font-size: 1.3rem;
       max-width: 800px;
       margin: auto;
+      color: #FFFFFF;
     }
     .availability-icon {
       width: 48px;
       vertical-align: middle;
       margin-left: 1rem;
-      filter: drop-shadow(0 0 3px #E4ECEE);
+      filter: drop-shadow(0 0 3px #FFFFFF);
       transition: transform 0.3s ease;
     }
     .availability-link:hover .availability-icon {
@@ -380,8 +385,8 @@
       position: relative;
     }
     .project-tabs .btn, .certification-tabs .btn {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
-      color: #1C2526;
+      background: #28A745;
+      color: #FFFFFF;
       border: none;
       padding: 0.5rem 1.5rem;
       border-radius: 25px;
@@ -435,7 +440,7 @@
       transform: scale(1.15);
     }
     .stats-section {
-      background: linear-gradient(135deg, #2A3436, #3C4A4D);
+      background: #2A3436;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
       padding: 2rem;
@@ -460,7 +465,7 @@
     .stats-card h3 {
       font-size: 2rem;
       font-weight: 700;
-      color: #2EC4B6;
+      color: #28A745;
       margin-bottom: 0.5rem;
       transition: transform 0.3s ease;
     }
@@ -469,7 +474,7 @@
     }
     .stats-card p {
       font-size: 0.9rem;
-      color: #E4ECEE;
+      color: #FFFFFF;
     }
     .modal-content {
       border-radius: 15px;
@@ -486,11 +491,11 @@
     .modal-title {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #2EC4B6;
+      color: #28A745;
     }
     .modal-body {
       padding: 2rem;
-      color: #E4ECEE;
+      color: #FFFFFF;
     }
     .modal-body img {
       width: 100%;
@@ -508,8 +513,8 @@
       padding: 1.5rem 2rem;
     }
     .modal-footer .btn {
-      background: linear-gradient(135deg, #2EC4B6, #1BA39C);
-      color: #1C2526;
+      background: #28A745;
+      color: #FFFFFF;
       border: none;
       border-radius: 25px;
       transition: background 0.3s ease, transform 0.3s ease;
@@ -517,7 +522,7 @@
       overflow: hidden;
     }
     .modal-footer .btn:hover {
-      background: linear-gradient(135deg, #1BA39C, #2EC4B6);
+      background: #218838;
       transform: scale(1.1);
       animation: glowPulse 1.5s infinite;
     }
@@ -584,13 +589,13 @@
       font-family: "Cabin", sans-serif;
       letter-spacing: 12px;
       text-indent: 12px;
-      color: #ffffff;
+      color: #FFFFFF;
       animation: 
         colorText 5s ease-out infinite,
         nudgeText 5s ease-out infinite;
     }
     .mouse {
-      background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #ffffff 50%, #ffffff 100%);
+      background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #FFFFFF 50%, #FFFFFF 100%);
       position: relative;
       width: 52px;
       height: 88px;
@@ -613,11 +618,11 @@
     .mouse::before {
       width: 46px;
       height: 82px;
-      background-color: #222a30;
+      background-color: #1C2526;
       border-radius: 100px;
     }
     .mouse::after {
-      background-color: #ffffff;
+      background-color: #FFFFFF;
       width: 10px;
       height: 10px;
       border-radius: 100%;
@@ -628,7 +633,7 @@
       20% { background-position: 0% 0%; }
       21% { background-color: #4e5559; }
       29.99% { 
-        background-color: #ffffff;
+        background-color: #FFFFFF;
         background-position: 0% 0%;
       }
       30% { 
@@ -638,7 +643,7 @@
       50% { background-position: 0% 0%; }
       51% { background-color: #4e5559; }
       59% { 
-        background-color: #ffffff;
+        background-color: #FFFFFF;
         background-position: 0% 0%;
       }
       60% { 
@@ -647,7 +652,7 @@
       }
       80% { background-position: 0% 0%; }
       81% { background-color: #4e5559; }
-      90%, 100% { background-color: #ffffff; }
+      90%, 100% { background-color: #FFFFFF; }
     }
     @keyframes trackBallSlide {
       0% {
@@ -731,11 +736,35 @@
     }
     @keyframes colorText { 
       21% { color: #4e5559; }
-      30% { color: #ffffff; }
+      30% { color: #FFFFFF; }
       51% { color: #4e5559; }
-      60% { color: #ffffff; }
+      60% { color: #FFFFFF; }
       81% { color: #4e5559; }
-      90% { color: #ffffff; }
+      90% { color: #FFFFFF; }
+    }
+    .title-parts {
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      background: rgba(40, 167, 69, 0.1);
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid #28A745;
+      box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+      line-height: 1.6;
+      max-width: 80%;
+      margin: 1rem auto;
+    }
+    .title-parts span {
+      display: inline-block;
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+      color: #28A745;
+      text-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
     }
     @media (max-width: 767px) {
       .section-title {
@@ -764,8 +793,7 @@
       .article-card,
       .testimonial-card,
       .certification-card,
-      .skill-card,
-      .step-container {
+      .skill-meter {
         width: 100%;
         min-width: 280px;
         margin-right: 15px;
@@ -774,7 +802,7 @@
       .project-card,
       .article-card,
       .certification-card,
-      .skill-card {
+      .skill-meter {
         min-width: 280px !important;
         min-height: 360px !important;
       }
@@ -819,12 +847,79 @@
         width: 8px;
         height: 8px;
       }
+      .title-parts {
+        font-size: 1rem;
+        padding: 8px 15px;
+        max-width: 90%;
+      }
     }
     @media (prefers-reduced-motion: reduce) {
-      .animate-on-scroll, .project-card, .stats-card, .testimonial-card, .article-card, .certification-card, .skill-card, .featured-project, .modal-content, .nav-link, .step-container, .scroll-down, .mouse, .scroll-down p {
+      .animate-on-scroll, .project-card, .stats-card, .testimonial-card, .article-card, .certification-card, .skill-meter, .featured-project, .modal-content, .nav-link, .step-container, .scroll-down, .mouse, .scroll-down p, .section-title, .title-parts, .title-parts span {
         animation: none;
         transition: none;
+        opacity: 1;
+        transform: none;
       }
+    }
+    /* Circular Progress Bars for Skills */
+    .skill-meter {
+      text-align: center;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 15px 15px 15px 0;
+      box-sizing: border-box;
+      animation: popIn 0.8s ease-out forwards;
+      animation-delay: calc(var(--skill-index) * 0.1s);
+    }
+    .progress-circle {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .progress-background {
+      fill: none;
+      stroke: #3C4A4D;
+      stroke-width: 5;
+      cx: 100;
+      cy: 100;
+      r: 90;
+    }
+    .progress-bar {
+      fill: none;
+      stroke: #28A745;
+      stroke-width: 5;
+      cx: 100;
+      cy: 100;
+      r: 90;
+      stroke-dasharray: 565.48;
+      stroke-dashoffset: 565.48;
+      transition: stroke-dashoffset 1.5s ease-out;
+    }
+    .skill-meter p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #28A745;
+      text-align: center;
+      max-width: 180px;
+      white-space: normal;
+    }
+    .card-title {
+      color: #28A745 !important;
+    }
+    .btn-outline-primary {
+      border-color: #28A745;
+      color: #28A745;
+    }
+    .btn-outline-primary:hover {
+      background: #28A745;
+      color: #FFFFFF;
     }
   </style>
 </head>
@@ -875,8 +970,8 @@
         <img src="images/about1.png" alt="Anuradha Menon" />
       </div>
       <h1 class="display-4 font-weight-bold">Anuradha Menon</h1>
-      <p class="lead mt-3">
-        Data Analyst & ESG Researcher<br />
+      <p class="lead mt-3 title-parts">
+        <span>Data Analyst Specialist</span> | <span>SQL, Python, Power BI</span> | <span>ESG Researcher</span> | <span>ML</span><br />
         Delivering actionable analytics for business and sustainability.
       </p>
       <div class="social-group">
@@ -988,49 +1083,68 @@
       <h2 class="section-title">My Skills</h2>
       <div id="skillsCarousel" class="skills-section">
         <div class="scroll-content">
-          <div class="skill-card" style="--card-index: 1;">
-            <div class="card h-100 shadow-sm">
-              <img src="images/skills/python.png" class="card-img-top" alt="Python" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Python</h6>
-                <p class="card-text small">
-                  Proficient in Python for data analysis, utilizing libraries such as Pandas, NumPy, and Scikit-learn to perform data wrangling, statistical analysis, and machine learning tasks. Experienced in automating data pipelines and building predictive models.
-                </p>
-              </div>
-            </div>
+          <div class="skill-meter" style="--skill-index: 1;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 56.548;"></circle>
+            </svg>
+            <p>Python  90%</p>
           </div>
-          <div class="skill-card" style="--card-index: 2;">
-            <div class="card h-100 shadow-sm">
-              <img src="images/skills/sql.png" class="card-img-top" alt="SQL" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">SQL</h6>
-                <p class="card-text small">
-                  Skilled in writing complex SQL queries for data extraction, transformation, and analysis. Proficient in designing and optimizing database schemas, including snowflake schemas, and working with relational databases like PostgreSQL and MySQL.
-                </p>
-              </div>
-            </div>
+          <div class="skill-meter" style="--skill-index: 2;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 84.822;"></circle>
+            </svg>
+            <p>SQL  85%</p>
           </div>
-          <div class="skill-card" style="--card-index: 3;">
-            <div class="card h-100 shadow-sm">
-              <img src="images/skills/data visualization.png" class="card-img-top" alt="Data Visualization" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Data Visualization</h6>
-                <p class="card-text small">
-                  Expertise in creating impactful visualizations using Power BI, Tableau, and Matplotlib. Skilled in designing interactive dashboards and clear, concise charts that communicate insights effectively to stakeholders.
-                </p>
-              </div>
-            </div>
+          <div class="skill-meter" style="--skill-index: 3;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 28.274;"></circle>
+            </svg>
+            <p>Data Visualization  95%</p>
           </div>
-          <div class="skill-card" style="--card-index: 4;">
-            <div class="card h-100 shadow-sm">
-              <img src="images/skills/data storytelling.png" class="card-img-top" alt="Data Storytelling" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Data Storytelling</h6>
-                <p class="card-text small">
-                  Adept at crafting compelling narratives from data to drive decision-making. Experienced in translating complex analytical findings into actionable insights for diverse audiences, enhancing business strategies and stakeholder engagement.
-                </p>
-              </div>
-            </div>
+          <div class="skill-meter" style="--skill-index: 4;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 28.274;"></circle>
+            </svg>
+            <p>Data Storytelling  95%</p>
+          </div>
+          <div class="skill-meter" style="--skill-index: 5;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 28.274;"></circle>
+            </svg>
+            <p>ESG Research  95%</p>
+          </div>
+          <div class="skill-meter" style="--skill-index: 6;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 28.274;"></circle>
+            </svg>
+            <p>Quantitative Research  95%</p>
+          </div>
+          <div class="skill-meter" style="--skill-index: 7;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 56.548;"></circle>
+            </svg>
+            <p>Statistics  90%</p>
+          </div>
+          <div class="skill-meter" style="--skill-index: 8;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 11.31;"></circle>
+            </svg>
+            <p>Attention to Detail  98%</p>
+          </div>
+          <div class="skill-meter" style="--skill-index: 9;">
+            <svg class="progress-circle" viewBox="0 0 200 200">
+              <circle class="progress-background" cx="100" cy="100" r="90"></circle>
+              <circle class="progress-bar" cx="100" cy="100" r="90" style="stroke-dashoffset: 56.548;"></circle>
+            </svg>
+            <p>Website Designing  90%</p>
           </div>
         </div>
       </div>
@@ -1049,7 +1163,7 @@
             <div class="card h-100 shadow-sm">
               <img src="images/projects/my portfolio website.png" class="card-img-top" alt="Personal Portfolio Website" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #2EC4B6;">Personal Portfolio Website</h5>
+                <h5 class="card-title">Personal Portfolio Website</h5>
                 <h6 class="font-weight-bold">Anuradha Menon’s Professional Portfolio</h6>
                 <p class="card-text small">
                   Developed this fully responsive, recruiter-friendly portfolio website showcasing my data analytics projects, skills, articles, and testimonials using Bootstrap and modern web technologies.
@@ -1066,7 +1180,7 @@
             <div class="card h-100 shadow-sm">
               <img src="images/projects/food waste management.png" class="card-img-top" alt="Food Waste Management Analytics" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #2EC4B6;">ESG / Sustainability</h5>
+                <h5 class="card-title">ESG / Sustainability</h5>
                 <h6 class="font-weight-bold">Food Waste Management Analytics</h6>
                 <p class="card-text small">
                   Built a dashboard for tracking & reducing food waste. Executive reports driving measurable, sustainable impact.
@@ -1083,7 +1197,7 @@
             <div class="card h-100 shadow-sm">
               <img src="images/projects/flight data analysis.png" class="card-img-top" alt="Flight Data Analysis" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #2EC4B6;">Transportation</h5>
+                <h5 class="card-title">Transportation</h5>
                 <h6 class="font-weight-bold">Flight Data Analysis</h6>
                 <p class="card-text small">
                   Analyzed airline performance and delays using SQL/Python. Route optimization dashboards & insights.
@@ -1100,7 +1214,7 @@
             <div class="card h-100 shadow-sm">
               <img src="images/projects/sales forecasting.png" class="card-img-top" alt="Sales Forecasting" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #2EC4B6;">Sales</h5>
+                <h5 class="card-title">Sales</h5>
                 <h6 class="font-weight-bold">Sales Forecasting</h6>
                 <p class="card-text small">
                   Time-series sales forecasting to optimize inventory and marketing.
@@ -1227,14 +1341,14 @@
           </div>
           <div class="project-card" style="--card-index: 12;">
             <div class="card h-100 shadow-sm">
-              <img src="images/projects/customer-segmentation.png" class="card-img-top" alt="Customer Segmentation Analysis" />
+              <img src="images/projects/heart disease prediction.png" class="card-img-top" alt="Heart Disease Prediction Using Logistic Regression" />
               <div class="card-body">
-                <h6 class="font-weight-bold">Customer Segmentation Analysis</h6>
+                <h6 class="font-weight-bold">Heart Disease Prediction Using Logistic Regression</h6>
                 <p class="card-text small">
-                  Applied clustering techniques to segment customers, optimizing marketing strategies.
+                  Heart Disease Prediction Using Logistic Regression.
                 </p>
                 <div class="project-tabs">
-                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Customer Segmentation Analysis" data-description="Applied clustering techniques to segment customers, optimizing marketing strategies." data-image="images/projects/customer-segmentation.png" data-code="https://github.com/anuradha-menon/customer-segmentation" data-blog="https://medium.com/@anuradhamenon_76458/customer-segmentation">Preview</button>
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Heart Disease Prediction Using Logistic Regression" data-description="Applied clustering techniques to segment customers, optimizing marketing strategies." data-image="images/projects/customer-segmentation.png" data-code="https://github.com/anuradha-menon/customer-segmentation" data-blog="https://medium.com/@anuradhamenon_76458/customer-segmentation">Preview</button>
                   <a href="https://github.com/anuradha-menon/customer-segmentation" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon_76458/customer-segmentation" target="_blank" class="btn">View Blog</a>
                 </div>
@@ -1243,14 +1357,14 @@
           </div>
           <div class="project-card" style="--card-index: 13;">
             <div class="card h-100 shadow-sm">
-              <img src="images/projects/predictive-maintenance.png" class="card-img-top" alt="Predictive Maintenance Dashboard" />
+              <img src="images/projects/fake news detection.png" class="card-img-top" alt="Fake News Detection Model Using Tensorflow" />
               <div class="card-body">
-                <h6 class="font-weight-bold">Predictive Maintenance Dashboard</h6>
+                <h6 class="font-weight-bold">Fake News Detection Model Using Tensorflow</h6>
                 <p class="card-text small">
-                  Developed a dashboard for predictive maintenance using time-series analysis.
+                  Fake News Detection Model Using Tensorflow.
                 </p>
                 <div class="project-tabs">
-                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Predictive Maintenance Dashboard" data-description="Developed a dashboard for predictive maintenance using time-series analysis." data-image="images/projects/predictive-maintenance.png" data-code="https://github.com/anuradha-menon/predictive-maintenance" data-blog="https://medium.com/@anuradhamenon_76458/predictive-maintenance">Preview</button>
+                  <button class="btn" data-toggle="modal" data-target="#projectModal" data-title="Fake News Detection Model Using Tensorflow" data-description="Developed a dashboard for predictive maintenance using time-series analysis." data-image="images/projects/predictive-maintenance.png" data-code="https://github.com/anuradha-menon/predictive-maintenance" data-blog="https://medium.com/@anuradhamenon_76458/predictive-maintenance">Preview</button>
                   <a href="https://github.com/anuradha-menon/predictive-maintenance" target="_blank" class="btn">View Code</a>
                   <a href="https://medium.com/@anuradhamenon_76458/predictive-maintenance" target="_blank" class="btn">View Blog</a>
                 </div>
@@ -1282,7 +1396,7 @@
           </div>
           <div class="certification-card" style="--card-index: 2;">
             <div class="card h-100 shadow-sm">
-              <img src="images/certifications/certificate2.png" class="card-img-top" alt="ESG Research Certification" />
+              <img src="images/certifications/certificate2.png" class="card-img-top" alt="The Materiality of ESG Factors Certification" />
               <div class="card-body">
                 <h6 class="font-weight-bold">The Materiality of ESG Factors Certification</h6>
                 <p class="card-text small">
@@ -1331,175 +1445,196 @@
     <p>
       I am actively accepting new data analytics, ESG research, and dashboarding projects on Upwork.<br />
       Whether starting your analytics journey or optimizing existing processes, I can deliver actionable insights.<br />
-      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" rel="noopener" style="color: #1C2526; font-weight: 700;" class="availability-link">
+      <a href="https://www.upwork.com/freelancers/~016be33dba68ca3966" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 700;" class="availability-link">
         View my Upwork profile here
         <img src="icons/upwork.png" alt="Upwork" class="availability-icon" />
       </a>
     </p>
   </section>
   <section id="articles" class="section-pad animate-on-scroll">
-    <div class="container">
-      <h2 class="section-title">Featured Articles & Thought Leadership</h2>
-      <div id="articlesCarousel" class="articles-section">
-        <div class="scroll-content">
-          <div class="article-card" style="--card-index: 1;">
-            <div class="card h-100">
-              <img src="images/articles/GRI.png" class="card-img-top" alt="Understanding the Global Reporting Initiative" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
-                <p class="card-text small">
-                  Comprehensive guide on the world's most widely used sustainability reporting framework.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+      <div class="container">
+        <h2 class="section-title">Featured Articles & Thought Leadership</h2>
+        <div id="articlesCarousel" class="articles-section">
+          <div class="scroll-content">
+            <div class="article-card" style="--card-index: 1;">
+              <div class="card h-100">
+                <img src="images/articles/GRI.png" class="card-img-top" alt="Understanding the Global Reporting Initiative" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">Understanding the Global Reporting Initiative (GRI) Standards</h6>
+                  <p class="card-text small">
+                    Comprehensive guide on the world's most widely used sustainability reporting framework.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/understanding-the-global-reporting-initiative-gri-standards-a-comprehensive-guide-for-5af581ba7b0e" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="article-card" style="--card-index: 2;">
-            <div class="card h-100">
-              <img src="images/articles/ESG research.png" class="card-img-top" alt="The Impact of ESG Disclosure on Firm Value" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
-                <p class="card-text small">
-                  Exploring how ESG practices affect company financial performance and market value.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+            <div class="article-card" style="--card-index: 2;">
+              <div class="card h-100">
+                <img src="images/articles/ESG research.png" class="card-img-top" alt="The Impact of ESG Disclosure on Firm Value" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">The Impact of ESG Disclosure on Firm Value</h6>
+                  <p class="card-text small">
+                    Exploring how ESG practices affect company financial performance and market value.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/the-impact-of-esg-disclosure-on-firm-value-insights-from-research-14130987a638" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="article-card" style="--card-index: 3;">
-            <div class="card h-100">
-              <img src="images/articles/value chain.png" class="card-img-top" alt="The Corporate Value Chain" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
-                <p class="card-text small">
-                  A deep dive into Scope 3 emissions and the best practices in GHG reporting.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+            <div class="article-card" style="--card-index: 3;">
+              <div class="card h-100">
+                <img src="images/articles/value chain.png" class="card-img-top" alt="The Corporate Value Chain" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">The Corporate Value Chain: Scope 3 Accounting & Reporting (GHG Protocol)</h6>
+                  <p class="card-text small">
+                    A deep dive into Scope 3 emissions and the best practices in GHG reporting.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/the-corporate-value-chain-a-deeper-dive-into-scope-3-accounting-and-reporting-ghg-protocol-62517a040d81" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="article-card" style="--card-index: 4;">
-            <div class="card h-100">
-              <img src="images/articles/lca.png" alt="Driving Sustainability" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
-                <p class="card-text small">
-                  How companies use GHG LCA for environmental responsibility and sustainability strategies.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+            <div class="article-card" style="--card-index: 4;">
+              <div class="card h-100">
+                <img src="images/articles/lca.png" alt="Driving Sustainability" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">Driving Sustainability: The Critical Role of GHG Life Cycle Assessment (GHG LCA)</h6>
+                  <p class="card-text small">
+                    How companies use GHG LCA for environmental responsibility and sustainability strategies.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/driving-sustainability-the-critical-role-of-greenhouse-gas-life-cycle-assessment-ghg-lca-84e1da564267" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="article-card" style="--card-index: 5;">
-            <div class="card h-100">
-              <img src="images/articles/mitigation goal.png" class="card-img-top" alt="Mitigation Goal" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">Mitigation Goal: Allowable Emissions</h6>
-                <p class="card-text small">
-                  A quiz to test understanding of emissions limits in sustainability frameworks.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+            <div class="article-card" style="--card-index: 5;">
+              <div class="card h-100">
+                <img src="images/articles/mitigation goal.png" class="card-img-top" alt="Mitigation Goal" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">Mitigation Goal: Allowable Emissions</h6>
+                  <p class="card-text small">
+                    A quiz to test understanding of emissions limits in sustainability frameworks.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/mitigation-goal-allowable-emissions-quiz-dd6bb90c6c4" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="article-card" style="--card-index: 6;">
-            <div class="card h-100">
-              <img src="images/articles/fab india.png" class="card-img-top" alt="FabIndia: Tradition with Sustainability" />
-              <div class="card-body">
-                <h6 class="font-weight-bold">FabIndia: Tradition with Sustainability</h6>
-                <p class="card-text small">
-                  Analysis of FabIndia’s integration of ESG into business operations for sustainable growth.
-                </p>
-                <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #2EC4B6; color: #2EC4B6;">Read Article</a>
+            <div class="article-card" style="--card-index: 6;">
+              <div class="card h-100">
+                <img src="images/articles/fab india.png" class="card-img-top" alt="FabIndia: Tradition with Sustainability" />
+                <div class="card-body">
+                  <h6 class="font-weight-bold">FabIndia: Tradition with Sustainability</h6>
+                  <p class="card-text small">
+                    Analysis of FabIndia’s integration of ESG into business operations for sustainable growth.
+                  </p>
+                  <a href="https://medium.com/@anuradhamenon_76458/fabindia-tradition-with-sustainability-4a20c5fbe1fc" target="_blank" class="btn btn-outline-primary btn-sm" style="border-color: #28A745; color: #28A745;">Read Article</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="text-center mt-4">
+          <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-sm" style="background: linear-gradient(135deg, #28A745, #218838); border: none; color: #FFFFFF;" target="_blank">More Articles on Medium</a>
+        </div>
       </div>
-      <div class="text-center mt-4">
-        <a href="https://medium.com/@anuradhamenon_76458" class="btn btn-sm" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); border: none; color: #1C2526;" target="_blank">More Articles on Medium</a>
-      </div>
-    </div>
-  </section>
+    </section>
   <section id="testimonials" class="section-pad animate-on-scroll">
-    <div class="container">
-      <h2 class="section-title">Testimonials</h2>
-      <div id="testimonialsCarousel" class="testimonials-section">
-        <div class="scroll-content">
-          <div class="testimonial-card text-center" style="--card-index: 1;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Anuradha delivered actionable dashboards far beyond our expectations — her insights directly improved our sustainability KPIs.
-              </span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/about.png" alt="Anuradha Menon" />
-              <div>
-                <strong>Anuradha Menon</strong><br />
-                Sustainability Lead, GreenFoods Pvt. Ltd.
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+        <div id="testimonialsCarousel" class="testimonials-section">
+          <div class="scroll-content">
+            <div class="testimonial-card" style="--card-index: 1;">
+              <p class="small">
+                "Anuradha’s data analytics transformed our sustainability reporting. Her dashboards were insightful and actionable."
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client1.png" alt="Client 1" />
+                <div>
+                  <strong>Jane Doe</strong><br />
+                  <small>Sustainability Manager, GreenCorp</small>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 2;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Her analytics and clear data storytelling helped us optimize our supply chain operations, reducing costs significantly.</span>
-            </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonial2.png" alt="John Doe" />
-              <div>
-                <strong>John Doe</strong><br />
-                Operations Manager, TransLogistics Inc.
+            <div class="testimonial-card" style="--card-index: 2;">
+              <p class="small">
+                "Her ability to translate complex data into clear strategies is unmatched. Highly recommend!"
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client2.png" alt="Client 2" />
+                <div>
+                  <strong>John Smith</strong><br />
+                  <small>Data Lead, TechSolutions</small>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card text-center" style="--card-index: 3;">
-            <div>
-              <span class="font-italic" style="color: #2EC4B6;">&#10077;</span>
-              <span class="d-block my-3">
-                Anuradha’s expertise in ESG research provided us with a clear roadmap to align with global sustainability standards.
-              </span>
+            <div class="testimonial-card" style="--card-index: 3;">
+              <p class="small">
+                "Anuradha’s ESG expertise helped us align with global standards. Exceptional work!"
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client3.png" alt="Client 3" />
+                <div>
+                  <strong>Emily Brown</strong><br />
+                  <small>CEO, EcoInnovate</small>
+                </div>
+              </div>
             </div>
-            <div class="testimonial-author mt-3">
-              <img src="images/testimonial3.png" alt="Sarah Smith" />
-              <div>
-                <strong>Sarah Smith</strong><br />
-                ESG Consultant, EcoSolutions Ltd.
+            <div class="testimonial-card" style="--card-index: 4;">
+              <p class="small">
+                "Anuradha’s work on our sales forecasting model was precise and impactful. A true professional!"
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client4.png" alt="Client 4" />
+                <div>
+                  <strong>Michael Chen</strong><br />
+                  <small>Head of Operations, RetailPlus</small>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" style="--card-index: 5;">
+              <p class="small">
+                "Her visualizations made our data accessible and actionable. Outstanding collaboration!"
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client5.png" alt="Client 5" />
+                <div>
+                  <strong>Sophia Patel</strong><br />
+                  <small>Marketing Director, GrowthWave</small>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" style="--card-index: 6;">
+              <p class="small">
+                "Anuradha’s attention to detail and analytical skills elevated our project outcomes significantly."
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonials/client6.png" alt="Client 6" />
+                <div>
+                  <strong>David Kim</strong><br />
+                  <small>CTO, Innovatech</small>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   <section id="contact" class="section-pad animate-on-scroll">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <form action="https://formspree.io/f/your-form-id" method="POST" class="needs-validation" novalidate>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required />
-              <div class="invalid-feedback">Please enter your name.</div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required />
-              <div class="invalid-feedback">Please enter a valid email address.</div>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-              <div class="invalid-feedback">Please enter a message.</div>
-            </div>
-            <button type="submit" class="btn" style="background: linear-gradient(135deg, #2EC4B6, #1BA39C); color: #1C2526;">Send Message</button>
-          </form>
-        </div>
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <form id="contactForm" class="mx-auto" style="max-width: 600px;">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn" style="background: linear-gradient(135deg, #28A745, #218838); color: #FFFFFF;">Send Message</button>
+        </form>
       </div>
-    </div>
   </section>
   <footer class="footer">
     <div class="container">
@@ -1520,8 +1655,7 @@
       </div>
     </div>
   </footer>
-
-  <!-- Project Modal -->
+  <!-- Modal for Project Details -->
   <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -1532,79 +1666,170 @@
           </button>
         </div>
         <div class="modal-body">
-          <img src="" alt="Project Image" class="img-fluid" />
-          <p></p>
+          <img id="modalImage" src="" alt="Project Image" class="img-fluid" />
+          <p id="modalDescription"></p>
         </div>
         <div class="modal-footer">
-          <a href="#" target="_blank" class="btn view-code">View Code</a>
-          <a href="#" target="_blank" class="btn view-blog">View Blog</a>
-          <a href="#" target="_blank" class="btn view-website">View Website</a>
+          <a id="modalCodeLink" href="#" target="_blank" class="btn">View Code</a>
+          <a id="modalBlogLink" href="#" target="_blank" class="btn">View Blog</a>
+          <a id="modalWebsiteLink" href="#" target="_blank" class="btn">Visit Website</a>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap 4 JS, Popper.js, and jQuery -->
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Custom JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
   <script>
-    // Scroll animations
-    function handleScrollAnimations() {
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        },
-        { threshold: 0.1 }
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate section titles with enhanced effect
+    gsap.utils.toArray('.section-title').forEach((title, index) => {
+      gsap.fromTo(
+        title,
+        { opacity: 0, y: 50, scale: 0.95, rotation: -2 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1.05,
+          rotation: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+          delay: index * 0.2,
+        }
       );
-      elements.forEach((el) => observer.observe(el));
-    }
+    });
+
+    // Animate on-scroll elements
+    gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+
+    // Animate profile image
+    gsap.from('.profile-img-container img', {
+      opacity: 0,
+      scale: 0.9,
+      duration: 1,
+      ease: 'power2.out',
+    });
+
+    // Animate title parts with enhanced bounce effect and fallback
+    gsap.fromTo(
+      '.title-parts span',
+      { opacity: 0, y: 20, scale: 0.9 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'back.out(1.7)',
+        delay: 0.5,
+        onComplete: () => {
+          document.querySelectorAll('.title-parts span').forEach(span => {
+            span.style.opacity = '1';
+            span.style.transform = 'translateY(0) scale(1)';
+            span.style.visibility = 'visible';
+          });
+        }
+      }
+    );
+
+    // Fallback for title visibility after 1.5 seconds
+    setTimeout(() => {
+      document.querySelectorAll('.title-parts span').forEach(span => {
+        span.style.opacity = '1';
+        span.style.transform = 'translateY(0) scale(1)';
+        span.style.visibility = 'visible';
+      });
+      document.querySelector('.title-parts').style.opacity = '1';
+      document.querySelector('.title-parts').style.visibility = 'visible';
+    }, 1500);
+
+    // Animate social icons
+    gsap.from('.icon-link img', {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'back.out(1.7)',
+    });
+
+    // Animate stats counters
+    gsap.utils.toArray('.counter').forEach((counter) => {
+      gsap.fromTo(
+        counter,
+        { innerText: 0 },
+        {
+          innerText: counter.getAttribute('data-target'),
+          duration: 2,
+          ease: 'power1.out',
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: counter,
+            start: 'top 80%',
+          },
+        }
+      );
+    });
+
+    // Animate skill progress bars
+    gsap.utils.toArray('.skill-meter').forEach((meter, index) => {
+      const percentageText = meter.querySelector('p').textContent.match(/(\d+)%/);
+      if (percentageText) {
+        const percentage = parseInt(percentageText[1]);
+        const circle = meter.querySelector('.progress-bar');
+        const circumference = 2 * Math.PI * 90; // r=90 from SVG
+        const offset = circumference - (percentage / 100) * circumference;
+        gsap.fromTo(
+          circle,
+          { strokeDashoffset: circumference },
+          {
+            strokeDashoffset: offset,
+            duration: 1.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: meter,
+              start: 'top 80%',
+            },
+            delay: index * 0.1,
+          }
+        );
+      }
+    });
 
     // Navbar scroll effect
-    function handleNavbarScroll() {
+    window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-    }
-
-    // Counter animation for stats
-    function handleCounterAnimation() {
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach((counter) => {
-        counter.innerText = '0';
-        const updateCounter = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = target / 200;
-          if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCounter, 10);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        const observer = new IntersectionObserver(
-          (entries) => {
-            if (entries[0].isIntersecting) {
-              updateCounter();
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observer.observe(counter);
-      });
-    }
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
     // Modal data population
     $('#projectModal').on('show.bs.modal', function (event) {
@@ -1617,95 +1842,80 @@
       const website = button.data('website');
       const modal = $(this);
       modal.find('.modal-title').text(title);
-      modal.find('.modal-body img').attr('src', image);
-      modal.find('.modal-body p').text(description);
-      modal.find('.view-code').attr('href', code);
-      modal.find('.view-blog').attr('href', blog);
-      modal.find('.view-website').attr('href', website).toggle(website !== undefined);
+      modal.find('#modalDescription').text(description);
+      modal.find('#modalImage').attr('src', image);
+      modal.find('#modalCodeLink').attr('href', code);
+      modal.find('#modalBlogLink').attr('href', blog);
+      if (website) {
+        modal.find('#modalWebsiteLink').attr('href', website).show();
+      } else {
+        modal.find('#modalWebsiteLink').hide();
+      }
     });
 
-    // Form validation
-    (function () {
-      'use strict';
-      const forms = document.querySelectorAll('.needs-validation');
-      Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    })();
+    // Contact form submission (example)
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Form submitted! (This is a placeholder for actual form handling.)');
+      this.reset();
+    });
 
     // Bitcoin canvas animation
-    function handleBitcoinAnimation() {
-      const canvas = document.getElementById('bitcoinCanvas');
-      const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById('bitcoinCanvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+
+    function resizeCanvas() {
       canvas.width = canvas.parentElement.offsetWidth;
       canvas.height = canvas.parentElement.offsetHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-      const particlesArray = [];
-      const numberOfParticles = 50;
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.size = Math.random() * 5 + 1;
-          this.speedX = Math.random() * 3 - 1.5;
-          this.speedY = Math.random() * 3 - 1.5;
-        }
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
-          if (this.size > 0.2) this.size -= 0.1;
-        }
-        draw() {
-          ctx.fillStyle = 'rgba(244, 162, 97, 0.8)';
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
       }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(40, 167, 69, 0.8)'; // Green color to match money-like theme
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
 
-      function init() {
-        for (let i = 0; i < numberOfParticles; i++) {
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.2) {
+          particlesArray.splice(i, 1);
+          i--;
           particlesArray.push(new Particle());
         }
       }
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) {
-          particlesArray[i].update();
-          particlesArray[i].draw();
-          if (particlesArray[i].size <= 0.2) {
-            particlesArray.splice(i, 1);
-            i--;
-            particlesArray.push(new Particle());
-          }
-        }
-        requestAnimationFrame(animate);
-      }
-
-      init();
-      animate();
-
-      window.addEventListener('resize', () => {
-        canvas.width = canvas.parentElement.offsetWidth;
-        canvas.height = canvas.parentElement.offsetHeight;
-      });
+      requestAnimationFrame(animateParticles);
     }
 
-    // Initialize all functions on load
-    document.addEventListener('DOMContentLoaded', () => {
-      handleScrollAnimations();
-      handleNavbarScroll();
-      handleCounterAnimation();
-      handleBitcoinAnimation();
-    });
+    initParticles();
+    animateParticles();
   </script>
 </body>
 </html>
